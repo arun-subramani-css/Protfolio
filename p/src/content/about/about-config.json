@@ -1,0 +1,93 @@
+{
+    "educations": [
+        {
+            "id": "edu-1",
+            "school": "Kongu Engineering College",
+            "degree": "Bachelors in Computer Engineering",
+            "duration": "Aug 2024 - Present",
+            "content": ["GPA: 7.23 / 10"]
+        },
+        {
+            "id": "edu-2",
+            "school": "Kongu Polytechnic College",
+            "degree": "Dimplamo Computer Engineering",
+            "duration": "Aug 2021 - Jul 2024",
+            "content": ["GPA: 89.3/100"]
+        }
+    ],
+    "experiences": [
+        {
+            "id": "exp-1",
+            "company": "The Twelve'N",
+            "position": "E-commerce Manager (Freelance)",
+            "duration": "May 2024 - Present",
+            "description": [
+                "Developed customized Shopify storefronts with optimized product flows, theme enhancements and seamless checkout experiences.",
+                "Executed Meta Ads campaigns focused on audience targeting, retargeting and ROI-driven lead generation.",
+                "Designed marketing move strategies to scale brand visibility, improve acquisition funnels and maximize overall conversion rates."
+
+            ]
+        },
+        {
+            "id": "exp-2",
+            "company": "PIP Master",
+            "position": "Reasearch and Development Intern",
+            "duration": "Feb 2025 - Jun 2025",
+            "description": [
+                "Developed high-performance WordPress websites optimized for SEO, branding and user engagement.",
+                "Implemented data-driven marketing and conversion strategies using analytics, A/B testing and funnel optimization.",
+                "Designed detailed user journeys, landing pages and content strategies to increase engagement and improve conversion rates."
+            ]
+        }
+    ],
+    "skills": [
+        {
+            "title": "Programming",
+            "tools": ["JavaScript","Python","C","SQL"]
+        },
+        {
+            "title": "Web",
+            "tools": ["React","HTML/CSS"]
+        },
+        {
+            "title": "Databases",
+            "tools": ["MongoDB", "MySQL", "Firebase"]
+        },
+
+        {
+            "title": "OS & Tools",
+            "tools": ["MacOS", "Linux", "Git", "Docker", "Kubernetes"]
+        },
+        {
+            "title": "Design & Research",
+            "tools": [
+                "Figma",
+                "Adobe XD",
+                "User Interviews",
+                "Wireframing"
+            ]
+        },
+        {
+            "title": "E-commerce Platforms",
+            "tools": [
+                "Shopify", 
+                "WooCommerce"
+            ]
+        },
+        {
+            "title": "Ad Campaign Platforms",
+            "tools": [
+                "Meta Ads Manager",
+                "Google Ads"
+            ]
+        }
+    ],
+    "certifications": [
+        {
+            "title": "Azure AI Engineer Associate",
+            "issuer": "Microsoft",
+            "link": "https://learn.microsoft.com/api/credentials/share/en-us/ArunKS-9814/9C40B8056D515EC8?sharingId=5DBE878CB991EE62"
+        }
+    ]
+
+}

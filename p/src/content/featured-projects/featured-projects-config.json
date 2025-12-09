@@ -1,0 +1,43 @@
+[
+    {
+        "id": "featured-project-trackcta",
+        "title": "StickyBoard",
+        "demo": "https://stickyboard-3580f.firebaseapp.com/",
+        "github": "https://github.com/arun-subramani-css/stickyboard",
+        "tags": ["React", "Javascript", "Firebase"],
+        "description": "A web-based virtual sticky board that lets users create, move, link and organize digital notes.",
+        "image": "/assets/featured-projects/trackcta.webp",
+        "jpg": "/assets/featured-projects/trackcta.jpeg"
+    },
+    {
+        "id": "featured-project-asctb-reporter",
+        "title": "Mealink",
+        "demo": "https://hubmapconsortium.github.io/ccf-asct-reporter/",
+        "github": "https://github.com/hrishikeshpaul/ccf-asct-reporter",
+        "tags": ["JavaScript", "NodeJS","MongoDB","Firebase"],
+        "description": "Mealink is a web platform that connects donors and recipients, allowing people to donate and receive unused food, clothes, and household items with ease.",
+        "image": "/assets/featured-projects/asctb.webp",
+        "jpg": "/assets/featured-projects/asctb.jpeg"
+    },
+    {
+        "id": "other-project-noq",
+        "title": "Hydralic SpeedBreaker - IIC Regional Level Project",
+        "demo": "https://github.com/arun-subramani-css/Hydrolic-Speedbreaker",
+        "github": "https://github.com/arun-subramani-css/Hydrolic-Speedbreaker",
+        "tags": ["Python", "Yolo v8", "Roboflow"],
+        "description": "Built an AI-driven smart speed breaker that uses trained vision models and sensor fusion to identify approaching ambulances and automatically lower the hydraulic system, improving response time and enhancing patient safety.",
+        "image": "/assets/featured-projects/measure-ux.webp",
+        "jpg": "/assets/featured-projects/measure-ux.jpeg"
+    },
+    {
+        "id": "featured-project-scrapbook",
+        "title": "Socail Media Analytical Dashboard",
+        "tags": ["React","Javascript","Firebase"],
+        "demo": "http://34.69.102.109/",
+        "github": "https://github.com/hrishikeshpaul/scrapbook",
+        "description": "A web application that enables users to compare their own social Media platform.",
+        "image": "/assets/featured-projects/scrapbook.webp",
+        "jpg": "/assets/featured-projects/scrapbook.jpeg"
+    }
+]
+    

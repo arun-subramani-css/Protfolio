@@ -1,0 +1,38 @@
+[
+    {
+        "id": "other-project-post",
+        "title": "Inventory Management System",
+        "github": "https://github.com/arun-subramani-css/ivm-",
+        "tags": ["React", "JavaScript", "Yolo v8", "Roboflow"],
+        "description": "A complete Inventory Management System that tracks product stock, updates quantities, manages suppliers, and monitors low-stock alerts in real time.",
+        "image": "/assets/other-projects/post.webp",
+        "jpg": "/assets/other-projects/post.jpeg"
+    },
+    {
+        "id": "other-project-bank-compare",
+        "title": "Proxi-Brake",
+        "github": "https://github.com/hrishikeshpaul/post",
+        "tags": ["Esp32", "Ultrasonic Sensors", "Python"],
+        "description": "An IoT-based automatic braking system that uses ultrasonic sensors to detect rear obstacles and apply emergency brakes for accident prevention.",
+        "image": "/assets/other-projects/bank.webp",
+        "jpg": "/assets/other-projects/bank.jpeg"
+    },
+    {
+        "id": "other-project-bunder",
+        "title": "Gas Leak Detector",
+        "github": "https://github.com/hrishikeshpaul/post",
+        "tags": ["Esp32", "MQ2", "Ntfy", "Python"],
+        "description": "A real-time gas leakage detection system using an MQ2 sensor and ESP32 that triggers alerts via Ntfy to prevent fire hazards and accidents.",
+        "image": "/assets/other-projects/bunder.webp",
+        "jpg": "/assets/other-projects/bunder.jpeg"
+    },
+    {
+        "id": "other-project-suicide-analyzer",
+        "title": "Temprature Logger",
+        "tags": ["Esp32", "Temperature Sensor", "Ntfy", "Python"],
+        "description": "A smart food tracking device that monitors and logs food temperature, freshness, and storage conditions while sending alerts through Ntfy.",
+        "github": "https://github.com/hrishikeshpaul/whodata",
+        "image": "/assets/other-projects/suicide-analyzer.webp",
+        "jpg": "/assets/other-projects/suicide-analyzer.jpeg"
+    }
+]

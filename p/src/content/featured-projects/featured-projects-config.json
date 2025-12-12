@@ -30,14 +30,13 @@
         "jpg": "/assets/featured-projects/measure-ux.jpeg"
     },
     {
-        "id": "featured-project-scrapbook",
-        "title": "Socail Media Analytical Dashboard",
-        "tags": ["React","Javascript","Firebase"],
-        "demo": "http://34.69.102.109/",
-        "github": "https://github.com/hrishikeshpaul/scrapbook",
-        "description": "A web application that enables users to compare their own social Media platform.",
-        "image": "/assets/featured-projects/scrapbook.webp",
-        "jpg": "/assets/featured-projects/scrapbook.jpeg"
+        "id": "other-project-bank-compare",
+        "title": "Proxi-Brake",
+        "github": "https://github.com/hrishikeshpaul/post",
+        "tags": ["Esp32", "Ultrasonic Sensors", "Python"],
+        "description": "An IoT-based automatic braking system that uses ultrasonic sensors to detect rear obstacles and apply emergency brakes for accident prevention.",
+        "image": "/assets/other-projects/bank.webp",
+        "jpg": "/assets/other-projects/bank.jpeg"
     }
 ]
     

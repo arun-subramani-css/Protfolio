@@ -12,8 +12,8 @@
     {
         "id": "featured-project-asctb-reporter",
         "title": "Mealink",
-        "demo": "",
-        "github": "",
+        "demo": "https://mealink-5b2c1.web.app/",
+        "github": "https://github.com/arun-subramani-css/Mealink",
         "tags": ["JavaScript", "NodeJS","MongoDB","Firebase"],
         "description": "Mealink is a web platform that connects donors and recipients, allowing people to donate and receive unused food, clothes, and household items with ease.",
         "image": "/assets/featured-projects/asctb.webp",

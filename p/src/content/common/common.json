@@ -8,13 +8,13 @@
     "mainPictureJPG": "/assets/HP.jpeg",
     "cssVarPrefix": "AS",
     "email": "arunsubramani70105@gmail.com",
-    "linkedin": "www.linkedin.com/in/arun-k-s-70105saas",
+    "linkedin": "https://linkedin.com/in/arun-k-s-70105saas",
     "github": "https://github.com/arun-subramani-css",
     "resume": "https://drive.google.com/file/d/1UzjIGRXeSSFR-zhC45g2x9sUo5oDqX6m/view?usp=sharing",
     "socials": [
         {
             "type": "linkedin",
-            "link": "www.linkedin.com/in/arun-k-s-70105saas"
+            "link": "https://linkedin.com/in/arun-k-s-70105saas"
         },
         {
             "type": "github",

@@ -5,8 +5,8 @@
         "github": "https://github.com/arun-subramani-css/Text-analyzer/tree/main",
         "tags": ["React", "JavaScript", "Yolo v8", "Roboflow"],
         "description": "Allows user to detect the texts which selected from the given group of text",
-        "image": "/Users/apple/Desktop/project1/Protfolio/p/public/assets/other-projects/post.webp",
-        "jpg": "/Users/apple/Desktop/project1/Protfolio/p/public/assets/other-projects/post.jpeg"
+        "image": "/assets/other-projects/post.webp",
+        "jpg": "/assets/other-projects/post.jpeg"
     },
     {
         "id": "featured-project-scrapbook",
@@ -15,8 +15,8 @@
         "demo": "http://34.69.102.109/",
         "github": "https://github.com/hrishikeshpaul/scrapbook",
         "description": "A web application that enables users to compare their own social Media platform.",
-        "image": "/Users/apple/Desktop/project1/Protfolio/p/public/assets/other-projects/scrapbook.webp",
-        "jpg": "/Users/apple/Desktop/project1/Protfolio/p/public/assets/other-projects/scrapbook.jpeg"
+        "image": "/assets/other-projects/scrapbook.webp",
+        "jpg": "/assets/other-projects/scrapbook.jpeg"
     },
     {
         "id": "other-project-bunder",

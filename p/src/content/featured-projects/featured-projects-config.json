@@ -35,8 +35,8 @@
         "github": "https://github.com/arun-subramani-css/Proxi-Brake",
         "tags": ["Esp32", "Ultrasonic Sensors", "Python"],
         "description": "An IoT-based automatic braking system that uses ultrasonic sensors to detect rear obstacles and apply emergency brakes for accident prevention.",
-        "image": "/assets/other-projects/bank.webp",
-        "jpg": "/assets/other-projects/bank.jpeg"
+        "image": "/assets/featured-projects/bank.webp",
+        "jpg": "/assets/featured-projects/bank.jpeg"
     }
 ]
     

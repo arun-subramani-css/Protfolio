@@ -1,10 +1,8 @@
-Welcome 👋 I'm a Web & IoT Solutions Creator based out of Tamil Nadu, India. I'm an aspiring developer passionate about Web & IoT Development, UX Design, and Cloud & Data Analytics.
+Welcome 👋 Aspiring technology professional with a strong interest in Cloud Computing, Networking, Cybersecurity, and Data Analytics. Equipped with foundational knowledge of network fundamentals gained through academic projects and self-directed learning. Passionate about emerging technologies and security concepts.
 
-I'm currently working with,
+I'm currently working with:
 
--   Python
--   JavaScript(React)
--   MongoDB & Firebase
--   HTML/SCSS
--   Figma & Adobe XD
--   AWS & Docker
+- Networking Fundamentals & System Administration
+- Cloud Platforms & Virtualization
+- Cybersecurity Tools & Security Concepts
+- Data Analytics & Visualization

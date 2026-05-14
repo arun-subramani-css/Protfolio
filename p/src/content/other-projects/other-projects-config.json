@@ -12,7 +12,6 @@
         "id": "featured-project-scrapbook",
         "title": "Socail Media Analytical Dashboard",
         "tags": ["React","Javascript","Firebase"],
-        "demo": "http://34.69.102.109/",
         "github": "https://github.com/hrishikeshpaul/scrapbook",
         "description": "A web application that enables users to compare their own social Media platform.",
         "image": "/assets/other-projects/scrapbook.webp",

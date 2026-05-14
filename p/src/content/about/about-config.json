@@ -5,14 +5,18 @@
             "school": "Kongu Engineering College",
             "degree": "Bachelors in Computer Engineering",
             "duration": "Aug 2024 - Present",
-            "content": ["GPA: 7.23 / 10"]
+            "content": [
+                "GPA: 7.11 / 10"
+            ]
         },
         {
             "id": "edu-2",
             "school": "Kongu Polytechnic College",
             "degree": "Dimplamo Computer Engineering",
             "duration": "Aug 2021 - Jul 2024",
-            "content": ["GPA: 89.3/100"]
+            "content": [
+                "GPA: 89.3/100"
+            ]
         }
     ],
     "experiences": [
@@ -25,7 +29,6 @@
                 "Developed customized Shopify storefronts with optimized product flows, theme enhancements and seamless checkout experiences.",
                 "Executed Meta Ads campaigns focused on audience targeting, retargeting and ROI-driven lead generation.",
                 "Designed marketing move strategies to scale brand visibility, improve acquisition funnels and maximize overall conversion rates."
-
             ]
         },
         {
@@ -38,25 +41,43 @@
                 "Implemented data-driven marketing and conversion strategies using analytics, A/B testing and funnel optimization.",
                 "Designed detailed user journeys, landing pages and content strategies to increase engagement and improve conversion rates."
             ]
+        },
+        {
+            "id": "exp-3",
+            "company": "SECUVRA",
+            "position": "Full Stack Development Intern",
+            "duration": "Jan 2026 - Mar 2026",
+            "description": [
+                "Developed and managed WordPress websites and SaaS-based platforms with a focus on performance, responsiveness, and user experience.",
+                "Led and coordinated team activities during project development, ensuring smooth collaboration, task management, and timely delivery.",
+                "Contributed to website customization, feature implementation, branding improvements, and client-focused digital solutions."
+            ]
         }
     ],
     "skills": [
         {
             "title": "Programming",
-            "tools": ["JavaScript","Python","C","SQL"]
-        },
-        {
-            "title": "Web",
-            "tools": ["React","HTML/CSS"]
+            "tools": [
+                "Python",
+                "C",
+                "SQL"
+            ]
         },
         {
             "title": "Databases",
-            "tools": ["MongoDB", "MySQL", "Firebase"]
+            "tools": [
+                "MySQL",
+                "Firebase"
+            ]
         },
-
         {
             "title": "OS & Tools",
-            "tools": ["MacOS", "Linux", "Git", "Docker", "Kubernetes"]
+            "tools": [
+                "MacOS",
+                "Linux",
+                "Git",
+                "Docker"
+            ]
         },
         {
             "title": "Design & Research",
@@ -70,15 +91,8 @@
         {
             "title": "E-commerce Platforms",
             "tools": [
-                "Shopify", 
+                "Shopify",
                 "WooCommerce"
-            ]
-        },
-        {
-            "title": "Ad Campaign Platforms",
-            "tools": [
-                "Meta Ads Manager",
-                "Google Ads"
             ]
         }
     ],
@@ -89,5 +103,4 @@
             "link": "https://learn.microsoft.com/api/credentials/share/en-us/ArunKS-9814/9C40B8056D515EC8?sharingId=5DBE878CB991EE62"
         }
     ]
-
 }

@@ -1,10 +1,27 @@
 [
     {
+        "id": "url",
+        "title": "URL-Analytics",
+        "github": "https://github.com/arun-subramani-css/Url-Analytics",
+        "tags": [
+            "Azure Functions",
+            "Cosmos DB",
+            "React",
+            "Node.js"
+        ],
+        "description": "A cloud-based URL analytics platform for URL shortening, real-time click tracking, and browser/device analytics using Azure serverless architecture.",
+        "image": "/assets/featured-projects/url.webp",
+        "jpg": "/assets/featured-projects/url.jpeg"
+    },
+    {
         "id": "featured-project-trackcta",
         "title": "StickyBoard",
-        "demo": "https://stickyboard-3580f.firebaseapp.com/",
         "github": "https://github.com/arun-subramani-css/stickyboard",
-        "tags": ["React", "Javascript", "Firebase"],
+        "tags": [
+            "React",
+            "Javascript",
+            "Firebase"
+        ],
         "description": "A web-based virtual sticky board that lets users create, move, link and organize digital notes.",
         "image": "/assets/featured-projects/trackcta.webp",
         "jpg": "/assets/featured-projects/trackcta.jpeg"
@@ -12,9 +29,13 @@
     {
         "id": "featured-project-asctb-reporter",
         "title": "Mealink",
-        "demo": "https://mealink-5b2c1.web.app/",
         "github": "https://github.com/arun-subramani-css/Mealink",
-        "tags": ["JavaScript", "NodeJS","MongoDB","Firebase"],
+        "tags": [
+            "JavaScript",
+            "NodeJS",
+            "MongoDB",
+            "Firebase"
+        ],
         "description": "Mealink is a web platform that connects donors and recipients, allowing people to donate and receive unused food, clothes, and household items with ease.",
         "image": "/assets/featured-projects/asctb.webp",
         "jpg": "/assets/featured-projects/asctb.jpeg"
@@ -22,9 +43,12 @@
     {
         "id": "other-project-noq",
         "title": "Hydralic SpeedBreaker - IIC Regional Level Project",
-        "demo": "https://github.com/arun-subramani-css/Hydrolic-Speedbreaker",
         "github": "https://github.com/arun-subramani-css/Hydrolic-Speedbreaker",
-        "tags": ["Python", "Yolo v8", "Roboflow"],
+        "tags": [
+            "Python",
+            "Yolo v8",
+            "Roboflow"
+        ],
         "description": "Built an AI-driven smart speed breaker that uses trained vision models and sensor fusion to identify approaching ambulances and automatically lower the hydraulic system, improving response time and enhancing patient safety.",
         "image": "/assets/featured-projects/measure-ux.webp",
         "jpg": "/assets/featured-projects/measure-ux.jpeg"
@@ -33,10 +57,13 @@
         "id": "other-project-bank-compare",
         "title": "Proxi-Brake",
         "github": "https://github.com/arun-subramani-css/Proxi-Brake",
-        "tags": ["Esp32", "Ultrasonic Sensors", "Python"],
+        "tags": [
+            "Esp32",
+            "Ultrasonic Sensors",
+            "Python"
+        ],
         "description": "An IoT-based automatic braking system that uses ultrasonic sensors to detect rear obstacles and apply emergency brakes for accident prevention.",
         "image": "/assets/featured-projects/bank.webp",
         "jpg": "/assets/featured-projects/bank.jpeg"
     }
 ]
-    

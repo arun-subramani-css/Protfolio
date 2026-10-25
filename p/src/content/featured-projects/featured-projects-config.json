@@ -1,5 +1,86 @@
 [
     {
+        "id": "zaaroz",
+        "title": "Zaaroz Vendor App",
+        "subtitle": "End-to-End UI Redesign: Run a Shop at a Glance",
+        "description": "A comprehensive mobile UI/UX redesign for Zaaroz vendor partners. Re-architected order acceptance, inventory management, and payout visibility into a clear, high-contrast, task-guided mobile experience built for fast-paced kitchens and store counters.",
+        "categories": [
+            "UI/UX Design",
+            "Design Systems",
+            "Mobile App Architecture"
+        ],
+        "tags": [
+            "Figma",
+            "Mobile UX",
+            "Design System",
+            "Information Architecture",
+            "User Flows",
+            "Wireframing",
+            "Prototyping"
+        ],
+        "productPerspective": "Balancing high-speed operational efficiency with cognitive clarity — transforming a cluttered, equal-weight legacy interface into an action-first mobile tool vendors can operate one-handed mid-rush.",
+        "image": "/assets/featured-projects/zaaroz.jpg",
+        "jpg": "/assets/featured-projects/zaaroz.jpg",
+        "demo": "/zaaroz/",
+        "caseStudy": {
+            "overview": "Zaaroz vendors accept customer orders, manage live catalogs, and track daily settlements all from a single mobile application, often amidst noisy kitchens and busy retail counters. The legacy interface suffered from dark green equal-weight rows, buried store tools, dead-end empty states, and cryptic financial views. This redesign establishes clear visual hierarchy, guided task states, and a dedicated design system built for speed.",
+            "problem": "The original vendor application was functional but placed excessive cognitive load on vendors during peak rush hours:\n\n1. Lack of Visual Hierarchy: Dark green bars, small type, and plain table rows gave every element identical priority. Headers, totals, and primary CTAs looked alike, failing to guide vendor attention.\n2. Buried Store Tools: Critical workflows like grocery ordering, customer records, and settlements were hidden behind unlabelled small icons in a generic store grid.\n3. Dead-End Empty States: Screens terminated with abrupt messages like 'Sorry, No Payment Found' or 'No history to show yet' with zero actionable guidance or recovery steps.\n4. Unclear Financial Visibility: Daily earnings and total sales were tiny text entries without clear breakdowns of pending balance, completed payouts, or net amounts received.",
+            "intendedUsers": [
+                {
+                    "role": "Restaurant / Kitchen Vendor",
+                    "needs": "Rapid one-tap order acceptance with loud visual differentiation between new, in-prep, and ready orders under chaotic rush conditions."
+                },
+                {
+                    "role": "Grocery & Retail Store Partner",
+                    "needs": "Fast catalog item availability toggling, inventory pricing updates, and instant customer lookup."
+                },
+                {
+                    "role": "Store Owner / Manager",
+                    "needs": "Transparent payout timelines, itemized daily settlements, and quick access to business performance metrics."
+                }
+            ],
+            "workflows": [
+                {
+                    "stage": "1. Live Order Intake & Action",
+                    "detail": "Prominent status cards distinguish new incoming orders with high-contrast action triggers, eliminating order timeouts and kitchen delays."
+                },
+                {
+                    "stage": "2. Catalog & Item Management",
+                    "detail": "Streamlined item cards with instant availability toggles, bulk categorization, and guided addition forms with image previews."
+                },
+                {
+                    "stage": "3. Vendor Store & Tool Access",
+                    "detail": "Refactored store utilities with clear category cards, labeled functions, and direct paths to order fulfillment tools."
+                },
+                {
+                    "stage": "4. Financial Settlement & Transparency",
+                    "detail": "Dedicated payout dashboard breaking down gross sales, platform fees, pending balances, and verified bank transfer confirmations."
+                }
+            ],
+            "requirements": [
+                "Glanceable order status cards visible from 2+ feet away on counter stands.",
+                "Primary action color differentiation: energetic orange for actionable buttons and tabs; green strictly reserved for positive completion (Available, Paid).",
+                "Contextual empty states featuring explanatory illustrations and explicit primary CTA recovery buttons.",
+                "Accessible contrast ratios compliant with WCAG AA for outdoor and bright kitchen conditions.",
+                "Responsive layout optimized for one-handed thumb reachability on 5.5 to 6.7 inch smartphones."
+            ],
+            "designDecisions": [
+                "Action-Driven Palette: Repurposed brand orange as the primary 'do something' signal (accept order, edit item, active tab), reserving green solely for confirmed and positive states.",
+                "Bricolage Grotesque & DM Sans Typography: Paired characterful, high-legibility display numbers and headlines with neutral, highly readable body copy for tabular data.",
+                "Surface Depth & Dark-Mode Compatibility: Designed soft card elevations and border dividers to create clean physical grouping without visual clutter.",
+                "Scannable Financial Cards: Prominent metric chips showing wallet balance, next payout date, and gross earnings with easy drill-down into transaction receipts."
+            ],
+            "businessModel": "Zaaroz operates as an on-demand hyperlocal delivery ecosystem. Enhancing vendor app usability directly reduces order rejection rates, minimizes prep delays, accelerates vendor onboarding, and increases partner retention and platform loyalty.",
+            "implementation": "Designed and prototyped in Figma with complete component library, auto-layout tokens, interactive micro-states, and high-fidelity screen specs exported to HTML presentation.",
+            "currentStatus": "Complete UI/UX redesign package delivered with full component design system, annotated before-and-after audit screens, and interactive stakeholder walkthrough.",
+            "nextSteps": [
+                "Usability testing with active local merchant partners during live dinner rush hours.",
+                "A/B testing new order acceptance speed against legacy interface metrics.",
+                "Integrating real-time push notification sound customization for noisy environments."
+            ]
+        }
+    },
+    {
         "id": "launtree",
         "title": "Launtree",
         "subtitle": "Rethinking the Laundry Service Experience",

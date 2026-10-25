@@ -117,6 +117,21 @@ export const ProjectCaseStudyModal: FC<Props> = ({
                             </Button>
 
                             <HStack spacing="2">
+                                {project.demo && (
+                                    <Button
+                                        as={Link}
+                                        href={project.demo}
+                                        isExternal
+                                        size="sm"
+                                        variant="solid"
+                                        bg={BrandPalette.mutedTeal}
+                                        color="white"
+                                        fontSize="xs"
+                                        _hover={{ bg: BrandPalette.mutedTealHover, textDecoration: "none" }}
+                                    >
+                                        Interactive Presentation ↗
+                                    </Button>
+                                )}
                                 {project.github && (
                                     <Button
                                         as={Link}
@@ -378,6 +393,43 @@ export const ProjectCaseStudyModal: FC<Props> = ({
                                             </Box>
                                         ))}
                                     </SimpleGrid>
+
+                                    {project.demo && (
+                                        <Box
+                                            mt="6"
+                                            p={{ base: 5, md: 6 }}
+                                            bg={BrandPalette.cardBg}
+                                            border={`1px solid ${BrandPalette.stoneBorder}`}
+                                            borderRadius="xl"
+                                            display="flex"
+                                            justifyContent="space-between"
+                                            alignItems="center"
+                                            flexDirection={{ base: "column", sm: "row" }}
+                                            gap="4"
+                                        >
+                                            <Box>
+                                                <Text fontWeight="700" fontSize="md" color={BrandPalette.charcoal} mb="1">
+                                                    Interactive Before & After Design Deck
+                                                </Text>
+                                                <Text fontSize="xs" color={BrandPalette.secondaryText}>
+                                                    Explore interactive screen toggles, live comparison sliders, component tokens, and complete audit boards.
+                                                </Text>
+                                            </Box>
+                                            <Button
+                                                as={Link}
+                                                href={project.demo}
+                                                isExternal
+                                                size="sm"
+                                                variant="solid"
+                                                bg={BrandPalette.mutedTeal}
+                                                color="white"
+                                                _hover={{ bg: BrandPalette.mutedTealHover, textDecoration: "none" }}
+                                                minW="140px"
+                                            >
+                                                Open Deck ↗
+                                            </Button>
+                                        </Box>
+                                    )}
                                 </Box>
                             )}
 

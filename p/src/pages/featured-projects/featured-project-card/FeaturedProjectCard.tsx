@@ -34,6 +34,7 @@ export const FeaturedProjectCard: FC<Props> = (props) => {
         tags,
         productPerspective,
         github,
+        demo,
         image,
         imagePosition,
         onOpenCaseStudy,
@@ -140,6 +141,20 @@ export const FeaturedProjectCard: FC<Props> = (props) => {
                         >
                             View Case Study
                         </Button>
+
+                        {demo && (
+                            <Button
+                                as={Link}
+                                href={demo}
+                                isExternal
+                                size="sm"
+                                variant="secondary"
+                                fontSize="xs"
+                                _hover={{ textDecoration: "none" }}
+                            >
+                                Interactive Deck ↗
+                            </Button>
+                        )}
 
                         {github && (
                             <Button

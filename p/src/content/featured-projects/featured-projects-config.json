@@ -1,69 +1,348 @@
 [
     {
+        "id": "launtree",
+        "title": "Launtree",
+        "subtitle": "Rethinking the Laundry Service Experience",
+        "description": "Launtree is a laundry service platform designed to simplify how customers discover laundry services, schedule pickups, manage orders, and coordinate deliveries through local laundry partners.",
+        "categories": [
+            "Product Management",
+            "UI/UX Design",
+            "Business Model Exploration"
+        ],
+        "tags": [
+            "React 19",
+            "Vite",
+            "Tailwind CSS",
+            "Node.js",
+            "Express",
+            "MongoDB",
+            "Socket.io",
+            "PhonePe"
+        ],
+        "productPerspective": "Exploring how customer experience, partner workflows, service operations, and business model decisions fit together in a multi-sided service platform.",
+        "image": "/assets/featured-projects/launtree.jpg",
+        "jpg": "/assets/featured-projects/launtree.jpg",
+        "caseStudy": {
+            "overview": "Launtree was conceived as a multi-sided laundry marketplace connecting four key stakeholders: urban households seeking hassle-free laundry care, neighborhood laundry shops with processing capacity, independent delivery riders seeking localized earnings, and platform operations oversight.",
+            "problem": "Traditional laundry services in dense urban neighborhoods suffer from fragmented operational visibility. Customers experience unpredictable turnaround times, manual pricing confusion, and anxiety regarding item handoffs. Meanwhile, local laundry shops operate below capacity due to localized footfall limits and lack customer communication tools, while delivery coordination is ad-hoc.",
+            "intendedUsers": [
+                {
+                    "role": "Customer",
+                    "needs": "Frictionless service discovery, transparent pricing by laundry category, predictable pickup/drop scheduling, real-time status tracking, and secure handoffs."
+                },
+                {
+                    "role": "Laundry Shop Partner",
+                    "needs": "Centralized order queue, clear intake logging, item processing verification photos, and coordinated handoffs."
+                },
+                {
+                    "role": "Delivery Partner",
+                    "needs": "Intuitive route/order assignments, unambiguous pickup and delivery addresses, and proof-of-custody handoffs."
+                },
+                {
+                    "role": "Platform Administrator",
+                    "needs": "High-level visibility into order stages, dispute management, partner verification, and fee reconciliation."
+                }
+            ],
+            "workflows": [
+                {
+                    "stage": "1. Discovery & Booking",
+                    "detail": "Customer browses categorized laundry services (wash & fold, dry clean, steam iron, bedding), configures items, selects address, and chooses pickup time window."
+                },
+                {
+                    "stage": "2. Shop Acceptance & Driver Linking",
+                    "detail": "Order is routed to optimal nearby shop partner; on acceptance, available delivery rider is assigned with customer location."
+                },
+                {
+                    "stage": "3. 4-Stage OTP Verified Custody Gates",
+                    "detail": "Gate 1 (Pickup OTP): Spoken by customer to driver at doorstep. Gate 2 (Drop OTP): Shown by shop to driver on arrival. Gate 3 (Shop Pickup OTP): Shown by shop when clean order is collected for return. Gate 4 (Delivery OTP): Spoken by customer to driver on final delivery."
+                },
+                {
+                    "stage": "4. Processing & Live Tracking",
+                    "detail": "Shop uploads intake photo during inspection. Customer tracks active progress stage in real time via live status socket feed."
+                }
+            ],
+            "requirements": [
+                "Strict state-machine order lifecycle to prevent skipped transitions or orphaned bags.",
+                "Server-side CSPRNG-generated single-use OTPs with 5-attempt rate-limiting and 15-minute lockouts.",
+                "Role-based views ensuring sensitive information (like return OTPs) is only revealed to authorized parties.",
+                "Responsive mobile-first interfaces allowing drivers and shop workers to execute actions with one thumb."
+            ],
+            "designDecisions": [
+                "Clear color-coded status badges indicating physical custody (With Customer → In Transit → At Facility → Out for Delivery).",
+                "Large numerical OTP entry blocks with auto-focus to minimize friction during physical outdoor handoffs.",
+                "Separation of concerns across distinct apps (/ for customer, /shop/partner for shops, /delivery for drivers, /admin for oversight) sharing a unified design token system.",
+                "Visual category grids with iconography to speed up laundry configuration without confusing nested menus."
+            ],
+            "businessModel": "Explored a commission-on-gross-order model with tiered delivery charges based on distance radius and express turnaround options. Balances partner unit economics with affordable customer delivery fees.",
+            "implementation": "Engineered as a Vite-powered SPA with role-specific views, backed by Express 5 REST API and MongoDB/Mongoose models (Order, Shop, Partner, User). Real-time transitions coordinated using Socket.io and PhonePe gateway integration for digital prepayments.",
+            "currentStatus": "Core customer booking, driver pickup/delivery OTP verification modals, shop intake dashboard, and admin oversight architecture implemented and tested in local development environment.",
+            "nextSteps": [
+                "Implement automated route clustering for multi-order driver pickups in dense zones.",
+                "Add automated weigh-and-adjust billing for laundry baskets priced by kilogram.",
+                "Conduct live pilot in an identified micro-locality with 2 partner laundromats to measure turnaround time and handoff NPS."
+            ]
+        }
+    },
+    {
         "id": "url",
-        "title": "URL-Analytics",
-        "github": "https://github.com/arun-subramani-css/Url-Analytics",
+        "title": "URL Analytics",
+        "subtitle": "Turning Link Activity into Useful Insights",
+        "description": "A cloud-based URL analytics platform for URL shortening, real-time click tracking, and browser and device analytics.",
+        "categories": [
+            "Product Analytics",
+            "Cloud Architecture",
+            "Full Stack"
+        ],
         "tags": [
             "Azure Functions",
-            "Cosmos DB",
+            "Azure Cosmos DB",
             "React",
             "Node.js"
         ],
-        "description": "A cloud-based URL analytics platform for URL shortening, real-time click tracking, and browser/device analytics using Azure serverless architecture.",
+        "productPerspective": "Translating technical serverless telemetry into actionable link engagement metrics and intuitive dashboards.",
+        "github": "https://github.com/arun-subramani-css/Url-Analytics",
         "image": "/assets/featured-projects/url.webp",
-        "jpg": "/assets/featured-projects/url.jpeg"
+        "jpg": "/assets/featured-projects/url.jpeg",
+        "caseStudy": {
+            "overview": "URL Analytics was designed to bridge the gap between simple link shortening and meaningful click performance intelligence for creators and product teams.",
+            "problem": "Standard link shorteners often obscure traffic breakdowns or lock basic geographical and device breakdown metrics behind expensive enterprise tiers.",
+            "intendedUsers": [
+                {
+                    "role": "Content Creators & Marketers",
+                    "needs": "Quick short URL creation with real-time feedback on campaign traffic sources."
+                },
+                {
+                    "role": "Product Builders",
+                    "needs": "Reliable low-latency redirects with programmatic access to link performance data."
+                }
+            ],
+            "workflows": [
+                {
+                    "stage": "1. Shortening Flow",
+                    "detail": "User pastes target URL; system validates protocol and generates unique short hash."
+                },
+                {
+                    "stage": "2. Redirect & Telemetry Capture",
+                    "detail": "On visitor click, serverless Azure Function logs headers (user-agent, referrer, timestamp) asynchronously to Cosmos DB before initiating HTTP 302 redirect."
+                },
+                {
+                    "stage": "3. Aggregation & Dashboard Presentation",
+                    "detail": "Dashboard queries aggregate records to display click counts, device breakdown (Desktop vs Mobile), and browser distribution."
+                }
+            ],
+            "requirements": [
+                "Sub-100ms redirect latency to prevent user drop-off.",
+                "Non-blocking telemetry writes using Azure serverless microservices.",
+                "Responsive analytics dashboard with clear comparative visualizations."
+            ],
+            "designDecisions": [
+                "Card-based dashboard layout highlighting total clicks, top referrers, and device distribution at a single glance.",
+                "Clean copy-to-clipboard interactions with instant visual confirmation.",
+                "Minimalist charts designed for quick scanning without cognitive overload."
+            ],
+            "businessModel": "Freemium SaaS model where core shortening and basic analytics are free, with paid tiers for custom branded domains and historical export.",
+            "implementation": "Built with Azure Functions for serverless compute, Azure Cosmos DB for scalable low-latency document storage, and React for the analytics dashboard UI.",
+            "currentStatus": "Core URL shortening, redirection engine, and live dashboard reporting verified and functioning.",
+            "nextSteps": [
+                "Introduce UTM campaign parameter builder and auto-tagging.",
+                "Add geolocational IP country breakdown on an interactive map."
+            ]
+        }
     },
     {
-        "id": "featured-project-trackcta",
-        "title": "StickyBoard",
-        "github": "https://github.com/arun-subramani-css/stickyboard",
-        "tags": [
-            "React",
-            "Javascript",
-            "Firebase"
-        ],
-        "description": "A web-based virtual sticky board that lets users create, move, link and organize digital notes.",
-        "image": "/assets/featured-projects/trackcta.webp",
-        "jpg": "/assets/featured-projects/trackcta.jpeg"
-    },
-    {
-        "id": "featured-project-asctb-reporter",
+        "id": "mealink",
         "title": "Mealink",
-        "github": "https://github.com/arun-subramani-css/Mealink",
+        "subtitle": "Connecting People Through Resource Sharing",
+        "description": "A web platform designed to connect donors and recipients of unused food, clothing, and household items.",
+        "categories": [
+            "Product Thinking",
+            "UI/UX Design",
+            "Web Platform"
+        ],
         "tags": [
             "JavaScript",
-            "NodeJS",
+            "Node.js",
             "MongoDB",
             "Firebase"
         ],
-        "description": "Mealink is a web platform that connects donors and recipients, allowing people to donate and receive unused food, clothes, and household items with ease.",
+        "productPerspective": "Designing empathetic, dignity-centered resource discovery flows to connect surplus essentials with individuals in need.",
+        "github": "https://github.com/arun-subramani-css/Mealink",
         "image": "/assets/featured-projects/asctb.webp",
-        "jpg": "/assets/featured-projects/asctb.jpeg"
+        "jpg": "/assets/featured-projects/asctb.jpeg",
+        "caseStudy": {
+            "overview": "Mealink addresses urban food and material waste by connecting community donors who have surplus edible food or household goods with local recipients and volunteers.",
+            "problem": "Significant quantities of surplus prepared food and useful clothing are discarded daily because finding nearby individuals or community shelters in real time is cumbersome.",
+            "intendedUsers": [
+                {
+                    "role": "Donors (Households, Caterers, Stores)",
+                    "needs": "Fast listing process with photos, expiry/availability windows, and pickup location."
+                },
+                {
+                    "role": "Recipients & Community Volunteers",
+                    "needs": "Proximity-based discovery, category filters, and verified claim workflows."
+                }
+            ],
+            "workflows": [
+                {
+                    "stage": "1. Donor Listing",
+                    "detail": "Donor posts item with item category, quantity estimate, safe consumption window, and approximate neighborhood."
+                },
+                {
+                    "stage": "2. Discovery & Filtering",
+                    "detail": "Recipients or shelter coordinators filter active listings by distance and urgency."
+                },
+                {
+                    "stage": "3. Claim & Pickup Coordination",
+                    "detail": "Claimant reserves listing; platform shares coordination contact details to confirm pickup."
+                }
+            ],
+            "requirements": [
+                "Time-sensitive expiry handling for perishable food items.",
+                "Simple listing form requiring under 60 seconds to post.",
+                "Clear safety and hygiene guidance for donors."
+            ],
+            "designDecisions": [
+                "Card-based feed with prominent countdown timers for perishable food items.",
+                "Clear category pills (Food, Clothing, Essentials) for instant visual filtering.",
+                "Dignified, welcoming user interface avoiding stigmatizing visual cues."
+            ],
+            "businessModel": "Non-profit community utility funded by local community micro-sponsorships and corporate CSR sustainability partnerships.",
+            "implementation": "Developed using Node.js/Express backend with MongoDB database storage and Firebase for media and authentication.",
+            "currentStatus": "Core listing creation, categorization, and resource catalog browsing implemented.",
+            "nextSteps": [
+                "Integrate NGO verification badges to build mutual trust.",
+                "Add push notifications for nearby volunteers when perishable food listings are published."
+            ]
+        }
     },
     {
-        "id": "other-project-noq",
-        "title": "Hydralic SpeedBreaker - IIC Regional Level Project",
-        "github": "https://github.com/arun-subramani-css/Hydrolic-Speedbreaker",
-        "tags": [
-            "Python",
-            "Yolo v8",
-            "Roboflow"
+        "id": "stickyboard",
+        "title": "StickyBoard",
+        "subtitle": "Making Digital Ideas Easier to Organize",
+        "description": "A web-based virtual sticky board that lets users create, move, link, and organize digital notes.",
+        "categories": [
+            "Interaction Design",
+            "Frontend Architecture",
+            "Product Utility"
         ],
-        "description": "Built an AI-driven smart speed breaker that uses trained vision models and sensor fusion to identify approaching ambulances and automatically lower the hydraulic system, improving response time and enhancing patient safety.",
-        "image": "/assets/featured-projects/measure-ux.webp",
-        "jpg": "/assets/featured-projects/measure-ux.jpeg"
+        "tags": [
+            "React",
+            "JavaScript",
+            "Firebase"
+        ],
+        "productPerspective": "Exploring freeform spatial canvasing versus structured lists for personal brainstorming and note organization.",
+        "github": "https://github.com/arun-subramani-css/stickyboard",
+        "image": "/assets/featured-projects/trackcta.webp",
+        "jpg": "/assets/featured-projects/trackcta.jpeg",
+        "caseStudy": {
+            "overview": "StickyBoard provides a lightweight virtual canvas where individuals and small teams can brainstorm, arrange thoughts spatially, and link related ideas.",
+            "problem": "Linear note-taking tools force hierarchical order too early in the ideation phase, stifling serendipitous connections and visual clustering.",
+            "intendedUsers": [
+                {
+                    "role": "Students & Thinkers",
+                    "needs": "Quick spatial capture of thoughts, exam revisions, and quick-access reminders."
+                },
+                {
+                    "role": "Product Designers & Planners",
+                    "needs": "Card grouping, rapid color categorization, and flexible spatial arrangement."
+                }
+            ],
+            "workflows": [
+                {
+                    "stage": "1. Quick Capture",
+                    "detail": "Click anywhere on the canvas or press shortcut to create a new sticky note."
+                },
+                {
+                    "stage": "2. Spatial Arrangement",
+                    "detail": "Drag notes across 2D coordinates to create thematic clusters."
+                },
+                {
+                    "stage": "3. Organization & Persistence",
+                    "detail": "Color-code notes by category and synchronize canvas state with cloud persistence."
+                }
+            ],
+            "requirements": [
+                "Smooth drag-and-drop interactions with minimal latency.",
+                "Automatic state persistence to prevent loss of ideas.",
+                "Clean visual hierarchy with customizable note colors."
+            ],
+            "designDecisions": [
+                "Infinite/freeform canvas feel with subtle grid texture.",
+                "Palette of high-contrast pastel note colors that maintain text readability.",
+                "Minimalist toolbar keeping canvas clear of distracting chrome."
+            ],
+            "businessModel": "Productivity utility tool designed as open-source portfolio demonstration.",
+            "implementation": "Built with React and HTML5 drag-and-drop APIs, utilizing Firebase Realtime Database for state synchronization.",
+            "currentStatus": "Note creation, drag positioning, color assignment, and cloud synchronization functional.",
+            "nextSteps": [
+                "Add visual connector lines between related notes.",
+                "Support multi-user real-time collaborative cursor presence."
+            ]
+        }
     },
     {
-        "id": "other-project-bank-compare",
-        "title": "Proxi-Brake",
-        "github": "https://github.com/arun-subramani-css/Proxi-Brake",
-        "tags": [
-            "Esp32",
-            "Ultrasonic Sensors",
-            "Python"
+        "id": "scrapbook",
+        "title": "Social Media Analytics Dashboard",
+        "subtitle": "Comparing Social Media Performance",
+        "description": "A web application designed to help users compare social media platforms through a unified interface.",
+        "categories": [
+            "Product Analytics",
+            "Dashboard Design",
+            "Data Visualization"
         ],
-        "description": "An IoT-based automatic braking system that uses ultrasonic sensors to detect rear obstacles and apply emergency brakes for accident prevention.",
-        "image": "/assets/featured-projects/bank.webp",
-        "jpg": "/assets/featured-projects/bank.jpeg"
+        "tags": [
+            "React",
+            "JavaScript",
+            "Firebase"
+        ],
+        "productPerspective": "Solving multi-platform reporting friction through consolidated interface design and cross-platform metric alignment.",
+        "github": "https://github.com/hrishikeshpaul/scrapbook",
+        "image": "/assets/other-projects/scrapbook.webp",
+        "jpg": "/assets/other-projects/scrapbook.jpeg",
+        "caseStudy": {
+            "overview": "A unified comparison tool that aggregates key performance indicators across social channels into a single coherent analytical dashboard.",
+            "problem": "Content managers waste hours manually switching between native platform analytics (Instagram, Twitter, YouTube) with disparate terminology and incompatible date ranges.",
+            "intendedUsers": [
+                {
+                    "role": "Social Media Managers",
+                    "needs": "Side-by-side comparison of engagement, audience reach, and publication pacing."
+                },
+                {
+                    "role": "Small Business Owners",
+                    "needs": "Simple executive summary of which channel yields the highest return on attention."
+                }
+            ],
+            "workflows": [
+                {
+                    "stage": "1. Account Overview",
+                    "detail": "Review consolidated follower growth and total monthly impressions across connected channels."
+                },
+                {
+                    "stage": "2. Cross-Channel Comparison",
+                    "detail": "Select two platforms to view normalized engagement rates and audience demographics side by side."
+                },
+                {
+                    "stage": "3. Trend Evaluation",
+                    "detail": "Inspect timeline charts to identify top-performing content formats."
+                }
+            ],
+            "requirements": [
+                "Normalized metric naming across differing native APIs.",
+                "Responsive charting accessible on tablet and desktop screens.",
+                "Quick filtering by customizable date intervals."
+            ],
+            "designDecisions": [
+                "Clean data cards pairing bold metrics with contextual trend arrows.",
+                "Consistent color coding per platform to allow rapid visual recognition.",
+                "Side-by-side split comparison views to facilitate cross-channel analysis."
+            ],
+            "businessModel": "Freemium analytics SaaS prototype.",
+            "implementation": "Engineered with React frontend components, Chart visualization libraries, and Firebase backend persistence.",
+            "currentStatus": "Dashboard comparison view and metric mock visualizations implemented.",
+            "nextSteps": [
+                "Integrate official Meta Graph and Twitter v2 API OAuth endpoints.",
+                "Add automated weekly PDF performance digest generation."
+            ]
+        }
     }
 ]

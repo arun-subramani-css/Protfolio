@@ -1,46 +1,46 @@
 import { useEffect, useState } from "react";
 
+export const LandingPageId = "page-landing";
 export const WorkPageId = "page-work";
-export const AboutPageId = "page-about";
+export const ApproachPageId = "product-approach";
+export const ExperiencePageId = "experience";
+export const AboutPageId = "about";
+export const ContactPageId = "contact";
 
-export enum Page {
-    Work = "work",
-    About = "about",
-}
-
-const pageIds = [WorkPageId, AboutPageId];
+const pageIds = [
+    LandingPageId,
+    WorkPageId,
+    ApproachPageId,
+    ExperiencePageId,
+    AboutPageId,
+    ContactPageId,
+];
 
 export const useScroll = () => {
-    const [page, setPage] = useState<string>("");
+    const [page, setPage] = useState<string>(LandingPageId);
 
     const scrollHandler = () => {
-        const documentTop = document.scrollingElement?.scrollTop!;
-        const pages = pageIds.map((page) => document.getElementById(page));
-        let newPage = "";
+        const scrollPosition = (window.pageYOffset || document.documentElement.scrollTop) + 120;
+        let activePage = LandingPageId;
 
-        pages.forEach((page) => {
-            if (page) {
-                const top = page.offsetTop;
-                const height = page.clientHeight;
-
-                if (top < documentTop && top + height > documentTop) {
-                    newPage = page.id;
+        for (const id of pageIds) {
+            const el = document.getElementById(id);
+            if (el) {
+                const top = el.offsetTop;
+                if (scrollPosition >= top) {
+                    activePage = id;
                 }
             }
-        });
+        }
 
-        setPage(newPage);
+        setPage(activePage);
     };
 
     useEffect(() => {
-        setTimeout(() => {
-            scrollHandler();
-        }, 100);
-
-        document.addEventListener("scroll", scrollHandler);
-
+        scrollHandler();
+        window.addEventListener("scroll", scrollHandler, { passive: true });
         return () => {
-            document.removeEventListener("scroll", () => {});
+            window.removeEventListener("scroll", scrollHandler);
         };
     }, []);
 

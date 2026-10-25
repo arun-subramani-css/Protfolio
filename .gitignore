@@ -1,0 +1,16 @@
+node_modules/
+.firebase/
+.DS_Store
+p/build/
+p/node_modules/
+p/.pnp
+p/.pnp.js
+p/coverage/
+.env*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package.json
+package-lock.json
+firebase.json
+.firebaserc

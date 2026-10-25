@@ -1,29 +1,57 @@
 [
     {
-        "id": "other-project-post",
-        "title": "Text Analyzer - International Hackathon",
-        "github": "https://github.com/arun-subramani-css/Text-analyzer/tree/main",
-        "tags": ["React", "JavaScript", "Yolo v8", "Roboflow"],
-        "description": "Allows user to detect the texts which selected from the given group of text",
-        "image": "/assets/other-projects/post.webp",
-        "jpg": "/assets/other-projects/post.jpeg"
+        "id": "hydraulic-speedbreaker",
+        "title": "Hydraulic SpeedBreaker — IIC Regional-Level Project",
+        "description": "An AI-driven smart speed breaker designed to identify approaching ambulances using vision models and sensor fusion, then control a hydraulic mechanism to support emergency vehicle movement.",
+        "tags": [
+            "Python",
+            "YOLOv8",
+            "Roboflow"
+        ],
+        "github": "https://github.com/arun-subramani-css/Hydrolic-Speedbreaker",
+        "image": "/assets/featured-projects/measure-ux.webp",
+        "jpg": "/assets/featured-projects/measure-ux.jpeg"
     },
     {
-        "id": "featured-project-scrapbook",
-        "title": "Socail Media Analytical Dashboard",
-        "tags": ["React","Javascript","Firebase"],
-        "github": "https://github.com/hrishikeshpaul/scrapbook",
-        "description": "A web application that enables users to compare their own social Media platform.",
-        "image": "/assets/other-projects/scrapbook.webp",
-        "jpg": "/assets/other-projects/scrapbook.jpeg"
+        "id": "proxi-brake",
+        "title": "Proxi-Brake",
+        "description": "An IoT-based automatic braking prototype that uses ultrasonic sensors to detect rear obstacles and trigger braking for accident prevention.",
+        "tags": [
+            "ESP32",
+            "Ultrasonic Sensors",
+            "Python"
+        ],
+        "github": "https://github.com/arun-subramani-css/Proxi-Brake",
+        "image": "/assets/featured-projects/bank.webp",
+        "jpg": "/assets/featured-projects/bank.jpeg"
     },
     {
-        "id": "other-project-bunder",
+        "id": "gas-leak-detector",
         "title": "Gas Leak Detector",
+        "description": "A gas leakage detection system using an MQ2 sensor and ESP32 to trigger alerts through Ntfy.",
+        "tags": [
+            "ESP32",
+            "MQ2 Sensor",
+            "Temperature Sensor",
+            "Ntfy",
+            "Python"
+        ],
         "github": "https://github.com/arun-subramani-css/gas-detector",
-        "tags": ["Esp32", "MQ2","Temperature Sensor", "Ntfy", "Python"],
-        "description": "A real-time gas leakage detection system using an MQ2 sensor and ESP32 that triggers alerts via Ntfy to prevent fire hazards and accidents.",
         "image": "/assets/other-projects/bunder.webp",
         "jpg": "/assets/other-projects/bunder.jpeg"
+    },
+    {
+        "id": "text-analyzer",
+        "title": "Text Analyzer — International Hackathon",
+        "description": "A text-analysis project designed to identify selected text within a provided group of text.",
+        "tags": [
+            "React",
+            "JavaScript",
+            "YOLOv8",
+            "Roboflow"
+        ],
+        "github": "https://github.com/arun-subramani-css/Text-analyzer/tree/main",
+        "image": "/assets/other-projects/post.webp",
+        "jpg": "/assets/other-projects/post.jpeg"
     }
 ]

@@ -1,52 +1,88 @@
 import { ComponentStyleConfig } from "@chakra-ui/react";
+import { BrandPalette } from "theme/colors/Colors";
 
 const TextStyles: ComponentStyleConfig = {
     baseStyle: {
-        fontWeight: 500,
+        fontWeight: 400,
+        color: BrandPalette.primaryText,
+        lineHeight: 1.65,
     },
 };
 
 const ContainerStyles: ComponentStyleConfig = {
     baseStyle: {
         maxW: "container.xl",
+        px: { base: 5, md: 8, lg: 12 },
     },
 };
 
 const ButtonStyles: ComponentStyleConfig = {
     baseStyle: {
-        fontWeight: "bold",
+        fontWeight: 600,
+        borderRadius: "md",
+        transition: "all 0.2s ease-in-out",
+        _focus: {
+            boxShadow: `0 0 0 2px ${BrandPalette.accentBlue}`,
+        },
     },
     variants: {
+        // Primary Call to Action: off-white background with dark text
         solid: {
-            color: "white",
+            bg: BrandPalette.primaryText,
+            color: BrandPalette.mainBg,
+            _hover: {
+                bg: BrandPalette.white,
+                transform: "translateY(-1px)",
+                _disabled: {
+                    bg: BrandPalette.primaryText,
+                },
+            },
+            _active: {
+                bg: BrandPalette.lightGray,
+                transform: "translateY(0)",
+            },
         },
-        secondary: (props: any) => {
-            return {
-                color: props.colorMode === "dark" ? "white" : "gray.900",
-                backgroundColor: props.colorMode === "dark" ? "gray.700" : "gray.50",
-                _hover: {
-                    backgroundColor: props.colorMode === "dark" ? "gray.600" : "gray.100",
-                },
-                _active: {
-                    backgroundColor: props.colorMode === "dark" ? "gray.600" : "gray.200",
-                },
-            };
+        // Secondary / Elevated Surface button
+        secondary: {
+            bg: BrandPalette.elevatedBg,
+            color: BrandPalette.primaryText,
+            border: `1px solid ${BrandPalette.border}`,
+            _hover: {
+                bg: BrandPalette.darkGray,
+                borderColor: BrandPalette.mediumGray,
+                transform: "translateY(-1px)",
+            },
+            _active: {
+                bg: BrandPalette.cardBg,
+                transform: "translateY(0)",
+            },
         },
-        icon: (props: any) => {
-            return {
-                color: props.colorMode === "dark" ? "white" : "gray.900",
-                background: "transparent",
-                _hover: {
-                    background: "transparent",
-                    color: "primary.500",
-                },
-                _focus: {
-                    background: "transparent",
-                },
-                _active: {
-                    background: "transparent",
-                },
-            };
+        outline: {
+            bg: "transparent",
+            color: BrandPalette.primaryText,
+            border: `1px solid ${BrandPalette.border}`,
+            _hover: {
+                bg: BrandPalette.elevatedBg,
+                borderColor: BrandPalette.mediumGray,
+            },
+        },
+        ghost: {
+            bg: "transparent",
+            color: BrandPalette.primaryText,
+            _hover: {
+                bg: BrandPalette.elevatedBg,
+            },
+        },
+        icon: {
+            bg: "transparent",
+            color: BrandPalette.secondaryText,
+            _hover: {
+                bg: BrandPalette.elevatedBg,
+                color: BrandPalette.primaryText,
+            },
+            _active: {
+                bg: BrandPalette.darkGray,
+            },
         },
     },
     defaultProps: {
@@ -55,15 +91,14 @@ const ButtonStyles: ComponentStyleConfig = {
 };
 
 const LinkStyles: ComponentStyleConfig = {
-    baseStyle: (props) => {
-        let color = "primary.600";
-
-        if (props.colorMode === "dark") color = "primary.100";
-
-        return {
-            fontWeight: 700,
-            color,
-        };
+    baseStyle: {
+        fontWeight: 500,
+        color: BrandPalette.accentBlue,
+        transition: "color 0.2s ease",
+        _hover: {
+            textDecoration: "underline",
+            color: BrandPalette.accentBlueHover,
+        },
     },
 };
 

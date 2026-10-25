@@ -1,0 +1,6 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#F3E8FF"/>
+  <circle cx="100" cy="100" r="80" fill="#9333EA" opacity="0.1"/>
+  <text x="50%" y="90%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#9333EA" font-weight="bold">Ironing</text>
+  <path d="M70,80 L130,80 L110,60 L70,100 M75,100 L75,140 L125,140 L125,100" fill="none" stroke="#9333EA" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

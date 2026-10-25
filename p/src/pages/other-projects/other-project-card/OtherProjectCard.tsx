@@ -1,48 +1,114 @@
 import { FC } from "react";
-
-import { Image, Box, Flex, Heading, Text } from "@chakra-ui/react";
-
+import { Box, Flex, Heading, Image, Text, Button, Link } from "@chakra-ui/react";
 import { Tags } from "shared/tags/Tags";
-import { ProjectCardFooter } from "shared/project-card-footer/ProjectCardFooter";
+import { BrandPalette } from "theme/colors/Colors";
+import { GitHubIcon } from "utils/Icons";
 
 interface Props {
     id: string;
     title: string;
-    demo?: string;
     github?: string;
     tags: string[];
     description: string;
     image: string;
-    jpg: string;
+    jpg?: string;
 }
 
-export const OtherProjectCard: FC<Props> = ({ id, title, demo, github, tags, description, image, jpg }) => {
+export const OtherProjectCard: FC<Props> = ({
+    id,
+    title,
+    github,
+    tags,
+    description,
+    image,
+}) => {
     return (
-        <Flex
-            alignItems={{ base: "flex-start", lg: "center" }}
-            gap="10"
-            id={`other-project-card-${id}`}
-            py={{ base: "8", md: "8" }}
+        <Box
+            id={`engineering-${id}`}
+            bg={BrandPalette.cardBg}
+            border={`1px solid ${BrandPalette.cardBorder}`}
+            borderRadius="xl"
+            overflow="hidden"
+            display="flex"
+            flexDirection="column"
+            justifyContent="space-between"
+            transition="all 0.2s ease"
+            _hover={{
+                borderColor: BrandPalette.mutedTeal,
+                transform: "translateY(-2px)",
+                boxShadow: "0 4px 16px rgba(36, 37, 34, 0.04)",
+            }}
         >
-            <Box flex="0.25" display={{ base: "none", md: "block" }} data-aos="fade-up" data-aos-offset="200">
-                <picture>
-                    <source type="image/webp" srcSet={image}></source>
-                    <source type="image/jpeg" srcSet={jpg}></source>
-                    <Image ignoreFallback src={image} borderRadius="xl" alt={`${title}-cover-image`} />
-                </picture>
-            </Box>
-            <Flex w="100%" direction="column" alignContent="center" flex={1}>
-                <Box>
-                    <Heading fontSize="2xl" data-aos="fade-down" data-aos-offset="200">
+            <Box>
+                {/* Thumbnail Header */}
+                <Box
+                    h="160px"
+                    w="100%"
+                    bg={BrandPalette.stoneNeutral}
+                    overflow="hidden"
+                    borderBottom={`1px solid ${BrandPalette.stoneBorder}`}
+                >
+                    <Image
+                        src={image}
+                        alt={`${title} Preview`}
+                        w="100%"
+                        h="100%"
+                        objectFit="cover"
+                        loading="lazy"
+                    />
+                </Box>
+
+                {/* Body Content */}
+                <Box p={{ base: 5, md: 6 }}>
+                    <Heading
+                        as="h4"
+                        fontSize={{ base: "md", md: "lg" }}
+                        fontWeight="700"
+                        color={BrandPalette.charcoal}
+                        mb="2"
+                        lineHeight="1.3"
+                    >
                         {title}
                     </Heading>
-                    <Text py="2" data-aos="fade" data-aos-delay="200" data-aos-offset="200">
+
+                    <Text
+                        fontSize="xs"
+                        color={BrandPalette.secondaryText}
+                        lineHeight="1.6"
+                        mb="4"
+                    >
                         {description}
                     </Text>
-                    <Tags tags={tags} id={id} size="xs" />
+
+                    <Box mb="2">
+                        <Tags id={id} tags={tags} variant="tech" size="2xs" />
+                    </Box>
                 </Box>
-                <ProjectCardFooter github={github}/>
-            </Flex>
-        </Flex>
+            </Box>
+
+            {/* Footer with GitHub link */}
+            {github && (
+                <Box
+                    px={{ base: 5, md: 6 }}
+                    pb={{ base: 5, md: 6 }}
+                    pt="2"
+                    borderTop={`1px solid ${BrandPalette.stoneBorder}`}
+                >
+                    <Flex justifyContent="flex-end">
+                        <Button
+                            as={Link}
+                            href={github}
+                            isExternal
+                            size="xs"
+                            variant="secondary"
+                            leftIcon={<GitHubIcon />}
+                            _hover={{ textDecoration: "none" }}
+                        >
+                            View Repository
+                        </Button>
+                    </Flex>
+                </Box>
+            )}
+        </Box>
     );
 };

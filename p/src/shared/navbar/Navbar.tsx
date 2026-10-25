@@ -1,69 +1,70 @@
-import { FC } from "react";
-
-import { Box, Button, Container, Flex, HStack, useColorModeValue } from "@chakra-ui/react";
+import { FC, useEffect, useState } from "react";
+import { Box, Container, Flex } from "@chakra-ui/react";
 
 import { configs } from "shared/content/Content";
 import { LogoType } from "shared/navbar/logo-type/LogoType";
-import { bgDark, bgLight } from "theme";
-import { onResumeOpen } from "utils/Functions";
-import { AboutPageId, useScroll, WorkPageId } from "utils/useScroll";
+import {
+    LandingPageId,
+    useScroll,
+} from "utils/useScroll";
 import { MenuDrawer } from "./drawer/Drawer";
-import { ColorModeButton } from "shared/color-mode-button/ColorModeButton";
+import { BrandPalette } from "theme/colors/Colors";
+import GradientMenu from "components/ui/gradient-menu";
 
 export const Navbar: FC = () => {
-    const bg = useColorModeValue(bgLight, bgDark);
-    const navItemColor = useColorModeValue("gray.800", "white");
     const currentPage = useScroll();
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const onScroll = () => {
+            setScrolled(window.scrollY > 20);
+        };
+        window.addEventListener("scroll", onScroll, { passive: true });
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
 
     const toSection = (section: string) => {
-        document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
+        const el = document.getElementById(section);
+        if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+        }
     };
 
     return (
-        <Box bg={bg} position="fixed" top="0" w="100%" left="50%" transform="translate(-50%)" zIndex="10">
-            <Container py="4" px="4" data-aos="fade-down" data-aos-duration="500" data-aos-delay="100">
+        <Box
+            as="header"
+            position="fixed"
+            top="0"
+            left="0"
+            right="0"
+            w="100%"
+            zIndex="100"
+            bg={scrolled ? "rgba(11, 11, 11, 0.90)" : "rgba(11, 11, 11, 0.75)"}
+            backdropFilter="blur(12px)"
+            borderBottom={`1px solid ${scrolled ? BrandPalette.border : "rgba(43, 43, 43, 0.4)"}`}
+            transition="all 0.2s ease"
+            py={scrolled ? 2 : 3}
+        >
+            <Container maxW="container.xl" px={{ base: 5, md: 8, lg: 12 }}>
                 <Flex justifyContent="space-between" alignItems="center">
-                    <LogoType text={configs.common.logoType} />
-                    <Flex alignItems="center" display={{ base: "none", md: "flex" }}>
-                        <HStack spacing="8" mr="6">
-                            <Button
-                                variant="link"
-                                color={navItemColor}
-                                textDecoration="underline"
-                                textDecorationThickness="2px"
-                                textDecorationColor={currentPage === WorkPageId ? "primary.500" : "transparent"}
-                                onClick={() => toSection(WorkPageId)}
-                                data-aos="fade"
-                                data-aos-delay="200"
-                            >
-                                Work
-                            </Button>
-                            <Button
-                                variant="link"
-                                color={navItemColor}
-                                textDecoration={currentPage === AboutPageId ? "underline" : "none"}
-                                textDecorationThickness="2px"
-                                textDecorationColor="primary.500"
-                                onClick={() => toSection(AboutPageId)}
-                                data-aos="fade"
-                                data-aos-delay="300"
-                            >
-                                About
-                            </Button>
-                            <Button variant="link" onClick={onResumeOpen} data-aos="fade" data-aos-delay="400">
-                                Resume
-                            </Button>
-                        </HStack>
-                        <ColorModeButton />
-                    </Flex>
+                    <LogoType
+                        text={configs.common.logoType}
+                        onClick={() => toSection(LandingPageId)}
+                    />
 
+                    {/* Compact Integrated Gradient Menu for Desktop & Tablet Navigation */}
+                    <Box display={{ base: "none", md: "block" }}>
+                        <GradientMenu activeId={currentPage} mode="portfolio" />
+                    </Box>
+
+                    {/* Mobile Navigation Drawer */}
                     <MenuDrawer
                         currentPage={currentPage}
                         onSectionClick={toSection}
                         display={{ base: "block", md: "none" }}
                     />
                 </Flex>
-            </Container> 
+            </Container>
         </Box>
     );
 };

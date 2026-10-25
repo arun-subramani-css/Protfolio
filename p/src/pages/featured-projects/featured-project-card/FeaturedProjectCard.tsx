@@ -1,131 +1,197 @@
 import { FC } from "react";
-
-import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import {
+    Box,
+    Flex,
+    Heading,
+    Image,
+    Text,
+    Button,
+    HStack,
+    Link,
+} from "@chakra-ui/react";
 import { Tags } from "shared/tags/Tags";
-import { ProjectCardFooter } from "shared/project-card-footer/ProjectCardFooter";
+import { BrandPalette } from "theme/colors/Colors";
+import { GitHubIcon } from "utils/Icons";
+import { ProjectItem } from "../case-study/ProjectCaseStudyModal";
 
 export enum ImagePosition {
     Right,
     Left,
 }
-interface Props {
-    id: string;
-    title: string;
-    demo?: string;
-    github?: string;
-    tags: string[];
-    description: string;
-    readMore?: string;
-    image: string;
+
+interface Props extends ProjectItem {
     imagePosition: ImagePosition;
-    jpg: string;
+    onOpenCaseStudy: (project: ProjectItem) => void;
 }
 
-const ImagePositionLayoutMapper: Record<ImagePosition, "row" | "row-reverse"> = {
-    [ImagePosition.Right]: "row",
-    [ImagePosition.Left]: "row-reverse",
-};
+export const FeaturedProjectCard: FC<Props> = (props) => {
+    const {
+        id,
+        title,
+        subtitle,
+        description,
+        categories,
+        tags,
+        productPerspective,
+        github,
+        image,
+        imagePosition,
+        onOpenCaseStudy,
+    } = props;
 
-const ImagePositionPaddingRightMapper: Record<ImagePosition, string> = {
-    [ImagePosition.Right]: "8",
-    [ImagePosition.Left]: "0",
-};
+    const isImageRight = imagePosition === ImagePosition.Right;
 
-const ImagePositionPaddingLeftMapper: Record<ImagePosition, string> = {
-    [ImagePosition.Right]: "0",
-    [ImagePosition.Left]: "8",
-};
-
-export const FeaturedProjectCard: FC<Props> = ({
-    id,
-    title,
-    demo,
-    github,
-    tags,
-    description,
-    readMore,
-    image,
-    imagePosition,
-    jpg,
-}) => {
     return (
-        <Flex
-            justifyContent="space-between"
-            id="featured-project-card"
-            py={{ base: "12", md: "12", lg: '28' }}
-            direction={{ base: "column-reverse", lg: ImagePositionLayoutMapper[imagePosition] }}
+        <Box
+            id={`project-${id}`}
+            bg={BrandPalette.cardBg}
+            border={`1px solid ${BrandPalette.cardBorder}`}
+            borderRadius="xl"
+            p={{ base: 5, md: 8 }}
+            mb={{ base: 8, md: 12 }}
+            transition="all 0.25s ease"
+            _hover={{
+                borderColor: BrandPalette.mutedTeal,
+                boxShadow: "0 6px 24px rgba(36, 37, 34, 0.05)",
+            }}
         >
             <Flex
-                h="auto"
-                pr={{ base: "0", lg: ImagePositionPaddingRightMapper[imagePosition] }}
-                pl={{ base: "0", lg: ImagePositionPaddingLeftMapper[imagePosition] }}
-                direction="column"
+                direction={{
+                    base: "column",
+                    lg: isImageRight ? "row" : "row-reverse",
+                }}
+                alignItems="center"
                 justifyContent="space-between"
-                flex={{ base: 1, lg: 0.6 }}
+                gap={{ base: 6, lg: 10 }}
             >
-                <Box>
-                    <Heading data-aos="fade-down" data-aos-offset="200" fontSize="4xl" lineHeight="1">
+                {/* Text Content Column */}
+                <Box flex={{ base: "1", lg: "0.55" }} w="100%">
+                    {categories && categories.length > 0 && (
+                        <Box mb="2">
+                            <Tags id={`${id}-cats`} tags={categories} variant="category" size="xs" />
+                        </Box>
+                    )}
+
+                    <Heading
+                        as="h3"
+                        fontSize={{ base: "xl", sm: "2xl", md: "3xl" }}
+                        fontWeight="700"
+                        letterSpacing="-0.02em"
+                        color={BrandPalette.charcoal}
+                        lineHeight="1.2"
+                    >
                         {title}
                     </Heading>
-                    <Text
-                        pt="2"
-                        fontSize="sm"
-                        fontWeight="600"
-                        opacity="0.6"
-                        data-aos="fade"
-                        data-aos-delay="100"
-                        data-aos-offset="200"
-                    >
-                    </Text>
 
-                    <Box
-                        py="4"
-                        display={{ base: "inherit", lg: "none" }}
-                        data-aos="fade-up"
-                        data-aos-offset="200"
-                        data-aos-delay="200"
-                    >
-                        <Image borderRadius="xl" src={image} />
-                    </Box>
+                    {subtitle && (
+                        <Text
+                            fontSize="sm"
+                            fontWeight="600"
+                            color={BrandPalette.mutedTeal}
+                            mt="1"
+                            mb="3"
+                        >
+                            {subtitle}
+                        </Text>
+                    )}
 
                     <Text
-                        fontSize="lg"
-                        pt={{ base: 0, lg: "2" }}
-                        data-aos="fade-up"
-                        data-aos-offset="200"
-                        data-aos-delay="200"
-                        borderRadius="xl"
-                        pb="2"
+                        fontSize={{ base: "sm", md: "md" }}
+                        color={BrandPalette.secondaryText}
+                        lineHeight="1.65"
+                        mb="4"
                     >
                         {description}
                     </Text>
 
-                    <Tags tags={tags} id={id} />
+                    {productPerspective && (
+                        <Box
+                            mb="4"
+                            p="3"
+                            bg={BrandPalette.softSage}
+                            borderLeft={`3px solid ${BrandPalette.mutedTeal}`}
+                            borderRadius="sm"
+                        >
+                            <Text fontSize="xs" fontWeight="700" textTransform="uppercase" color={BrandPalette.mutedTeal} mb="0.5">
+                                Product Perspective
+                            </Text>
+                            <Text fontSize="xs" color={BrandPalette.charcoal} fontWeight="500" lineHeight="1.5">
+                                {productPerspective}
+                            </Text>
+                        </Box>
+                    )}
+
+                    <Box mb="5">
+                        <Tags id={`${id}-tags`} tags={tags.slice(0, 5)} variant="tech" size="xs" />
+                    </Box>
+
+                    {/* Action buttons */}
+                    <HStack spacing="3" wrap="wrap">
+                        <Button
+                            size="sm"
+                            variant="solid"
+                            bg={BrandPalette.mutedTeal}
+                            color="white"
+                            px="5"
+                            fontSize="xs"
+                            fontWeight="600"
+                            _hover={{ bg: BrandPalette.mutedTealHover }}
+                            onClick={() => onOpenCaseStudy(props)}
+                        >
+                            View Case Study
+                        </Button>
+
+                        {github && (
+                            <Button
+                                as={Link}
+                                href={github}
+                                isExternal
+                                size="sm"
+                                variant="secondary"
+                                fontSize="xs"
+                                leftIcon={<GitHubIcon />}
+                                _hover={{ textDecoration: "none" }}
+                            >
+                                GitHub
+                            </Button>
+                        )}
+                    </HStack>
                 </Box>
 
-                <ProjectCardFooter readMore={readMore} github={github} demo={demo} />
-            </Flex>
-
-            <Box
-                data-aos="fade-up"
-                data-aos-offset="200"
-                display={{ base: "none", lg: "block" }}
-                flex={{ base: 1, lg: 0.6 }}
-                pl={{ base: "0", lg: ImagePositionPaddingRightMapper[imagePosition] }}
-                pr={{ base: "0", lg: ImagePositionPaddingLeftMapper[imagePosition] }}
-            >
-                <picture>
-                    <source type="image/webp" srcSet={image}></source>
-                    <source type="image/jpeg" srcSet={jpg}></source>
+                {/* Preview Image Column */}
+                <Box
+                    flex={{ base: "1", lg: "0.45" }}
+                    w="100%"
+                    borderRadius="lg"
+                    overflow="hidden"
+                    border={`1px solid ${BrandPalette.stoneBorder}`}
+                    bg={BrandPalette.stoneNeutral}
+                    cursor="pointer"
+                    onClick={() => onOpenCaseStudy(props)}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`Open case study for ${title}`}
+                    onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                            onOpenCaseStudy(props);
+                        }
+                    }}
+                    transition="transform 0.25s ease, opacity 0.25s ease"
+                    _hover={{
+                        transform: "scale(1.015)",
+                        opacity: 0.95,
+                    }}
+                >
                     <Image
-                        borderRadius="xl"
-                        src={jpg}
-                        alt={`${title}-cover-image`}
-                        transition="all 0.4s ease-in-out"
-                        _hover={{ boxShadow: "0px 20px 60px rgb(77 77 77 / 10%)", transform: "scale(1.01)" }}
+                        src={image}
+                        alt={`${title} Interface Preview`}
+                        w="100%"
+                        h={{ base: "210px", sm: "260px", lg: "280px" }}
+                        objectFit="cover"
+                        loading="lazy"
                     />
-                </picture>
-            </Box>
-        </Flex>
+                </Box>
+            </Flex>
+        </Box>
     );
 };

@@ -1,5 +1,9 @@
-Hi there ✌️ nice to meet you! I'm a Technology Enthusiast based out of Tamil Nadu, India.
+Hi, I'm Arun Subramani, a Computer Engineering student from Tamil Nadu, India, interested in the intersection of product management, analytics, design, and technology.
 
-Aspiring technology professional with a strong interest in Cloud Computing, Networking, Cybersecurity, and Data Analytics. Equipped with foundational knowledge of network fundamentals gained through academic projects and self-directed learning. Passionate about emerging technologies and security concepts.
+I enjoy exploring how digital products solve real problems, how users interact with interfaces, and how data can help inform better product decisions.
 
-In my free time, I enjoy badminton, swimming, and cooking. Always down to brainstorm ideas 💡
+My experience spans web development, e-commerce platforms, analytics-oriented applications, and engineering projects. These experiences have helped me appreciate both the technical side of building products and the importance of making them useful and accessible to people.
+
+I'm continuing to develop my skills in product thinking, product analytics, and UI/UX design, with the goal of contributing to products that balance user needs, business objectives, and technical feasibility.
+
+Outside technology, I enjoy badminton, swimming, and cooking. I'm always open to exchanging ideas, exploring new products, and learning from others.

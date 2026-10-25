@@ -1,4 +1,6 @@
-@import "src/theme/fonts/font.scss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind utilities;
 
 * {
   box-sizing: border-box;
@@ -7,28 +9,44 @@
 html,
 body,
 #root {
-  height: 100%;
-  cursor: url(./utils/assets/cursor.svg) 20 20, auto !important;
-
-  *::selection {
-    background: var(--hp-colors-orange-200);
-    transition: all 0.25s ease-in-out !important;
-  }
+  min-height: 100%;
+  background-color: #0B0B0B;
+  color: #F5F5F5;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-.autograph__path {
-  opacity: 0;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-
-  .animated & {
-    opacity: 1;
-    animation-name: line;
-  }
+::selection {
+  background: rgba(59, 130, 246, 0.35);
+  color: #FFFFFF;
 }
 
-@keyframes line {
-  100% {
-    stroke-dashoffset: 0;
+/* Custom dark scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0B0B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2B2B2B;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #383838;
+}
+
+/* Accessibility: respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

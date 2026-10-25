@@ -1,34 +1,40 @@
 import { FC } from "react";
-
-import { Flex, Box, Badge } from "@chakra-ui/react";
+import { Flex, Badge } from "@chakra-ui/react";
+import { BrandPalette } from "theme/colors/Colors";
 
 interface Props {
     id: string;
     tags: Array<string>;
+    variant?: "category" | "tech";
     size?: string;
-    delay?: number;
 }
 
-export const Tags: FC<Props> = ({ id, tags, size = "sm" }) => {
+export const Tags: FC<Props> = ({ id, tags, variant = "tech", size = "xs" }) => {
     return (
-        <Flex py="2" wrap="wrap" gap="4">
-            {tags.map((tag, idx) => (
-                <Box data-aos="flip-left" data-aos-delay={idx * 50} key={`${id}-tag-${tag}`}>
-                    <Badge
-                        transition="0.2s ease-in-out"
-                        transitionProperty="background, color"
-                        _hover={{ color: "white", bg: "primary.500" }}
-                        textTransform="none"
-                        colorScheme="gray"
-                        borderRadius="md"
-                        px="8px"
-                        py="4px"
-                        fontSize={size}
-                        fontWeight="600"
-                    >
-                        {tag}
-                    </Badge>
-                </Box>
+        <Flex py="1.5" wrap="wrap" gap="2">
+            {tags.map((tag) => (
+                <Badge
+                    key={`${id}-tag-${tag}`}
+                    textTransform="none"
+                    bg={BrandPalette.elevatedBg}
+                    color={BrandPalette.lightGray}
+                    border={`1px solid ${BrandPalette.border}`}
+                    borderRadius="md"
+                    px="2.5"
+                    py="1"
+                    fontSize={size}
+                    fontWeight={variant === "category" ? "600" : "500"}
+                    letterSpacing="0.01em"
+                    lineHeight="shorter"
+                    transition="all 0.15s ease"
+                    _hover={{
+                        bg: BrandPalette.darkGray,
+                        borderColor: BrandPalette.mediumGray,
+                        color: BrandPalette.primaryText,
+                    }}
+                >
+                    {tag}
+                </Badge>
             ))}
         </Flex>
     );

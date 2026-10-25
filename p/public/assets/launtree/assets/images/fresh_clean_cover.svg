@@ -1,0 +1,6 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#10B981"/>
+  <circle cx="200" cy="150" r="80" fill="white" opacity="0.2"/>
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="white" font-weight="bold">Fresh & Clean</text>
+  <path d="M200,130 C200,130 170,170 170,195 C170,211.569 183.431,225 200,225 C216.569,225 230,211.569 230,195 C230,170 200,130 200,130 Z" fill="white" opacity="0.9"/>
+</svg>

@@ -1,5 +1,8 @@
 {
-    "headline": "Hello, I'm Arun Subramani.",
-    "picture": "/assets/landing/face.webp",
-    "jpg": "/assets/landing/face.jpeg"
+    "name": "Arun Subramani",
+    "headline": "I turn ideas into useful digital products.",
+    "subdescriptor": "Product Management · Product Analytics · UI/UX Design",
+    "supportingCopy": "I'm a Computer Engineering student interested in the intersection of product thinking, analytics, and user-centred design. I enjoy understanding user problems, designing intuitive experiences, and turning ideas into practical technology solutions.",
+    "primaryAction": "Explore My Work",
+    "secondaryAction": "Get in Touch"
 }

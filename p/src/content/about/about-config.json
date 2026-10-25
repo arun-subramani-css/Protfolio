@@ -3,8 +3,8 @@
         {
             "id": "edu-1",
             "school": "Kongu Engineering College",
-            "degree": "Bachelors in Computer Engineering",
-            "duration": "Aug 2024 - Present",
+            "degree": "Bachelor's Degree in Computer Engineering",
+            "duration": "August 2024 – Present",
             "content": [
                 "GPA: 7.11 / 10"
             ]
@@ -12,87 +12,117 @@
         {
             "id": "edu-2",
             "school": "Kongu Polytechnic College",
-            "degree": "Dimplamo Computer Engineering",
-            "duration": "Aug 2021 - Jul 2024",
+            "degree": "Diploma in Computer Engineering",
+            "duration": "August 2021 – July 2024",
             "content": [
-                "GPA: 89.3/100"
+                "Score: 89.3 / 100"
             ]
         }
     ],
     "experiences": [
         {
+            "id": "exp-zaaroz",
+            "company": "Zaaroz",
+            "position": "UI/UX Design Intern",
+            "duration": "June 2026 – Present",
+            "description": [
+                "Contributed to end-to-end UI/UX design for digital products, translating product requirements into intuitive wireframes, user flows, and interface prototypes.",
+                "Designed responsive, user-friendly interfaces with a focus on usability, consistency, and clear navigation patterns.",
+                "Collaborated on iterative interface refinement to enhance interaction patterns and overall user satisfaction across key product journeys."
+            ]
+        },
+        {
             "id": "exp-1",
             "company": "The Twelve'N",
             "position": "E-commerce Manager (Freelance)",
-            "duration": "May 2024 - Present",
+            "duration": "May 2024 – Present",
             "description": [
-                "Developed customized Shopify storefronts with optimized product flows, theme enhancements and seamless checkout experiences.",
-                "Executed Meta Ads campaigns focused on audience targeting, retargeting and ROI-driven lead generation.",
-                "Designed marketing move strategies to scale brand visibility, improve acquisition funnels and maximize overall conversion rates."
+                "Developed customized Shopify storefronts with a focus on product presentation, shopping flows, theme enhancements, and checkout experiences."
             ]
         },
         {
             "id": "exp-2",
             "company": "PIP Master",
-            "position": "Reasearch and Development Intern",
-            "duration": "Feb 2025 - Jun 2025",
+            "position": "Research and Development Intern",
+            "duration": "February 2025 – June 2025",
             "description": [
-                "Developed high-performance WordPress websites optimized for SEO, branding and user engagement.",
-                "Implemented data-driven marketing and conversion strategies using analytics, A/B testing and funnel optimization.",
-                "Designed detailed user journeys, landing pages and content strategies to increase engagement and improve conversion rates."
+                "Developed WordPress websites with an emphasis on SEO, branding, and user engagement."
             ]
         },
         {
             "id": "exp-3",
             "company": "SECUVRA",
             "position": "Full Stack Development Intern",
-            "duration": "Jan 2026 - Mar 2026",
+            "duration": "January 2026 – March 2026",
             "description": [
-                "Developed and managed WordPress websites and SaaS-based platforms with a focus on performance, responsiveness, and user experience.",
-                "Led and coordinated team activities during project development, ensuring smooth collaboration, task management, and timely delivery.",
-                "Contributed to website customization, feature implementation, branding improvements, and client-focused digital solutions."
+                "Developed and managed WordPress websites and SaaS-based platforms, focusing on performance, responsiveness, and user experience."
             ]
         }
     ],
     "skills": [
         {
-            "title": "Programming",
-            "tools": [
-                "Python",
-                "C",
-                "SQL"
+            "category": "Product Thinking",
+            "items": [
+                "Problem-solving",
+                "Requirements Understanding",
+                "User Journey Mapping",
+                "Feature Evaluation"
             ]
         },
         {
-            "title": "Databases",
-            "tools": [
-                "MySQL",
-                "Firebase"
-            ]
-        },
-        {
-            "title": "OS & Tools",
-            "tools": [
-                "MacOS",
-                "Linux",
-                "Git",
-                "Docker"
-            ]
-        },
-        {
-            "title": "Design & Research",
-            "tools": [
+            "category": "UI/UX Design",
+            "items": [
                 "Figma",
                 "Adobe XD",
+                "Wireframing",
                 "User Interviews",
-                "Wireframing"
+                "Interface Design"
             ]
         },
         {
-            "title": "E-commerce Platforms",
-            "tools": [
+            "category": "Analytics & Data",
+            "items": [
+                "SQL",
+                "Python",
+                "Analytics Dashboards",
+                "Data Visualization"
+            ]
+        },
+        {
+            "category": "Software & Web Development",
+            "items": [
+                "React",
+                "JavaScript",
+                "Node.js",
+                "HTML",
+                "CSS"
+            ]
+        },
+        {
+            "category": "Databases & Cloud",
+            "items": [
+                "MySQL",
+                "MongoDB",
+                "Firebase",
+                "Azure Functions",
+                "Azure Cosmos DB"
+            ]
+        },
+        {
+            "category": "Development Tools",
+            "items": [
+                "Git",
+                "Docker",
+                "Linux",
+                "macOS"
+            ]
+        },
+        {
+            "category": "E-commerce",
+            "items": [
                 "Shopify",
-                "WooCommerce"
+                "WooCommerce",
+                "WordPress"
             ]
         }
     ],

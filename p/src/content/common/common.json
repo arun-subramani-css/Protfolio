@@ -1,11 +1,14 @@
 {
     "name": "Arun Subramani",
     "logoType": {
-        "mobile": "Arun Subramani",
-        "desktop": "Arun Subramani"
+        "mobile": "ARUN SUBRAMANI",
+        "desktop": "ARUN SUBRAMANI"
     },
-    "mainPicture": "/assets/HP.webp",
-    "mainPictureJPG": "/assets/HP.jpeg",
+    "headline": "I turn ideas into useful digital products.",
+    "subdescriptor": "Product Management · Product Analytics · UI/UX Design",
+    "heroCopy": "I'm a Computer Engineering student interested in the intersection of product thinking, analytics, and user-centred design. I enjoy understanding user problems, designing intuitive experiences, and turning ideas into practical technology solutions.",
+    "mainPicture": "/assets/arun.webp",
+    "mainPictureJPG": "/assets/arun.jpg",
     "cssVarPrefix": "AS",
     "email": "arunsubramani70105@gmail.com",
     "linkedin": "https://linkedin.com/in/arun-k-s-70105saas",

@@ -1,0 +1,159 @@
+/* Dark Minimalist GradientMenu styles */
+.gradient-menu-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .gradient-menu-list {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .gradient-menu-item {
+        position: relative;
+        width: 36px;
+        height: 36px;
+        background: #141414;
+        border-radius: 9999px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+        border: 1px solid #2B2B2B;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        user-select: none;
+        outline: none;
+
+        &:focus-visible {
+            box-shadow: 0 0 0 2px #3B82F6;
+            border-color: #3B82F6;
+        }
+
+        .gradient-bg {
+            position: absolute;
+            inset: 0;
+            border-radius: 9999px;
+            background: linear-gradient(135deg, var(--gradient-from, #3B82F6), var(--gradient-to, #2563EB));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .gradient-glow {
+            position: absolute;
+            top: 2px;
+            left: 0;
+            right: 0;
+            height: 100%;
+            border-radius: 9999px;
+            background: linear-gradient(135deg, var(--gradient-from, #3B82F6), var(--gradient-to, #2563EB));
+            filter: blur(8px);
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.3s ease;
+        }
+
+        .gradient-icon {
+            position: relative;
+            z-index: 2;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            font-size: 16px;
+            color: #F5F5F5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gradient-title {
+            position: absolute;
+            z-index: 2;
+            color: #FFFFFF;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            white-space: nowrap;
+            transform: scale(0);
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        &:hover,
+        &.is-active {
+            width: 105px;
+            border-color: #383838;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+
+            .gradient-bg {
+                opacity: 1;
+            }
+
+            .gradient-glow {
+                opacity: 0.35;
+            }
+
+            .gradient-icon {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            .gradient-title {
+                transform: scale(1);
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .gradient-menu-wrapper {
+        .gradient-menu-list {
+            gap: 8px;
+        }
+        .gradient-menu-item {
+            width: 38px;
+            height: 38px;
+
+            &:hover,
+            &.is-active {
+                width: 110px;
+            }
+
+            .gradient-icon {
+                font-size: 17px;
+            }
+
+            .gradient-title {
+                font-size: 10.5px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .gradient-menu-wrapper {
+        .gradient-menu-list {
+            gap: 6px;
+        }
+        .gradient-menu-item {
+            width: 34px;
+            height: 34px;
+
+            &:hover,
+            &.is-active {
+                width: 95px;
+            }
+
+            .gradient-icon {
+                font-size: 15px;
+            }
+
+            .gradient-title {
+                font-size: 9.5px;
+            }
+        }
+    }
+}

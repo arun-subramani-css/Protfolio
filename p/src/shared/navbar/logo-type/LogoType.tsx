@@ -1,21 +1,33 @@
 import { FC } from "react";
-
-import { Box, Text, useBreakpointValue } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
+import { BrandPalette } from "theme/colors/Colors";
 
 interface Props {
     text: {
         mobile: string;
         desktop: string;
     };
+    onClick?: () => void;
 }
 
-export const LogoType: FC<Props> = ({ text }) => {
-    const variant = useBreakpointValue({ base: text.mobile, md: text.desktop });
-
+export const LogoType: FC<Props> = ({ text, onClick }) => {
     return (
-        <Box transition="all 0.2s ease-in-out" _hover={{ cursor: "pointer", color: "primary.600" }}>
-            <Text fontSize={{ base: "3xl", md: "4xl" }} lineHeight="1" fontFamily="Signature" mb={{ base: 0, md: -2 }}>
-                {variant}
+        <Box
+            onClick={onClick}
+            cursor="pointer"
+            role="button"
+            aria-label="Navigate to top"
+            transition="opacity 0.2s ease"
+            _hover={{ opacity: 0.75 }}
+        >
+            <Text
+                fontSize={{ base: "xs", md: "sm" }}
+                fontWeight="700"
+                letterSpacing="0.16em"
+                textTransform="uppercase"
+                color={BrandPalette.charcoal}
+            >
+                {text.desktop}
             </Text>
         </Box>
     );

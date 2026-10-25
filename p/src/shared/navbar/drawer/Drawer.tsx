@@ -1,5 +1,4 @@
 import { FC, useRef } from "react";
-
 import {
     Box,
     Button,
@@ -14,103 +13,119 @@ import {
     StyleProps,
     Flex,
     VStack,
-    useColorModeValue,
+    Text,
 } from "@chakra-ui/react";
 
-import { ColorModeButton } from "shared/color-mode-button/ColorModeButton";
-import { AboutPageId, WorkPageId } from "utils/useScroll";
+import {
+    LandingPageId,
+    WorkPageId,
+    ApproachPageId,
+    ExperiencePageId,
+    AboutPageId,
+    ContactPageId,
+} from "utils/useScroll";
 import { MenuIcon } from "utils/Icons";
-import { Socials } from "shared/socials/Socials";
 import { onResumeOpen } from "utils/Functions";
+import { BrandPalette } from "theme/colors/Colors";
 
 interface Props extends StyleProps {
     onSectionClick: (section: string) => void;
     currentPage: string;
 }
 
+const navItems = [
+    { id: LandingPageId, label: "Home" },
+    { id: WorkPageId, label: "Work" },
+    { id: ApproachPageId, label: "Product & Design" },
+    { id: ExperiencePageId, label: "Experience" },
+    { id: AboutPageId, label: "About" },
+    { id: ContactPageId, label: "Contact" },
+];
+
 export const MenuDrawer: FC<Props> = ({ onSectionClick, currentPage, ...props }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const btnRef = useRef<any>(null);
-    const navItemColor = useColorModeValue("gray.800", "white");
+
+    const handleNav = (id: string) => {
+        onClose();
+        setTimeout(() => {
+            onSectionClick(id);
+        }, 200);
+    };
 
     return (
         <Box {...props}>
-            <Button
-                as={IconButton}
-                variant="icon"
+            <IconButton
                 ref={btnRef}
-                onClick={onOpen}
-                aria-label="open drawer"
-                fontSize="lg"
-                color="primary.500"
+                onClick={isOpen ? onClose : onOpen}
+                aria-label="Open navigation menu"
+                variant="ghost"
+                color={BrandPalette.charcoal}
                 icon={<MenuIcon />}
-                px="0"
+                fontSize="xl"
+                size="md"
             />
-            <Drawer isOpen={isOpen} placement="right" onClose={onClose} autoFocus={false}>
-                <DrawerOverlay />
-                <DrawerContent>
-                    <DrawerHeader px="4">
-                        <Flex justifyContent="space-between">
-                            <ColorModeButton />
+            <Drawer
+                isOpen={isOpen}
+                placement="right"
+                onClose={onClose}
+                finalFocusRef={btnRef}
+            >
+                <DrawerOverlay bg="blackAlpha.700" backdropFilter="blur(6px)" />
+                <DrawerContent bg={BrandPalette.mainBg} color={BrandPalette.primaryText} p="6" borderLeft={`1px solid ${BrandPalette.border}`}>
+                    <DrawerHeader p="0" mb="8" borderBottom={`1px solid ${BrandPalette.border}`} pb="4">
+                        <Flex justifyContent="space-between" alignItems="center">
+                            <Text
+                                fontSize="xs"
+                                fontWeight="700"
+                                letterSpacing="0.14em"
+                                textTransform="uppercase"
+                                color={BrandPalette.accentBlue}
+                            >
+                                Navigation
+                            </Text>
                             <DrawerCloseButton position="relative" top="0" right="0" />
                         </Flex>
                     </DrawerHeader>
 
-                    <DrawerBody>
-                        <VStack spacing="6" my="16">
-                            <Button
-                                variant="link"
-                                color={navItemColor}
-                                textDecoration="underline"
-                                textDecorationThickness="2px"
-                                textDecorationColor={currentPage === WorkPageId ? "primary.500" : "transparent"}
-                                onClick={() => {
-                                    onClose();
-                                    setTimeout(() => {
-                                        onSectionClick(WorkPageId);
-                                    }, 250);
-                                }}
-                                data-aos="fade"
-                                data-aos-delay="200"
-                                fontWeight="600"
-                                fontSize="2xl"
-                            >
-                                Work
-                            </Button>
-                            <Button
-                                variant="link"
-                                color={navItemColor}
-                                textDecoration={currentPage === AboutPageId ? "underline" : "none"}
-                                textDecorationThickness="2px"
-                                textDecorationColor="primary.500"
-                                onClick={() => {
-                                    onClose();
-                                    setTimeout(() => {
-                                        onSectionClick(AboutPageId);
-                                    }, 250);
-                                }}
-                                data-aos="fade"
-                                data-aos-delay="300"
-                                fontWeight="600"
-                                fontSize="2xl"
-                            >
-                                About
-                            </Button>
-                            <Button
-                                variant="link"
-                                color="primary.500"
-                                onClick={onResumeOpen}
-                                data-aos="fade"
-                                data-aos-delay="400"
-                                fontWeight="600"
-                                fontSize="2xl"
-                            >
-                                Resume
-                            </Button>
+                    <DrawerBody p="0">
+                        <VStack spacing="5" align="flex-start" my="4">
+                            {navItems.map((item) => {
+                                const isActive = currentPage === item.id;
+                                return (
+                                    <Button
+                                        key={item.id}
+                                        variant="ghost"
+                                        w="100%"
+                                        justifyContent="flex-start"
+                                        fontSize="lg"
+                                        fontWeight={isActive ? "700" : "500"}
+                                        color={isActive ? BrandPalette.accentBlue : BrandPalette.primaryText}
+                                        bg={isActive ? "rgba(59, 130, 246, 0.12)" : "transparent"}
+                                        _hover={{ bg: BrandPalette.elevatedBg }}
+                                        onClick={() => handleNav(item.id)}
+                                    >
+                                        {item.label}
+                                    </Button>
+                                );
+                            })}
                         </VStack>
-                        <Flex justifyContent="center" mt="16">
-                            <Socials delay={100} resume={false} />
-                        </Flex>
+
+                        <Box mt="8" pt="6" borderTop={`1px solid ${BrandPalette.border}`}>
+                            <Button
+                                w="100%"
+                                variant="solid"
+                                bg={BrandPalette.primaryText}
+                                color={BrandPalette.mainBg}
+                                _hover={{ bg: BrandPalette.white }}
+                                onClick={() => {
+                                    onClose();
+                                    onResumeOpen();
+                                }}
+                            >
+                                View Resume
+                            </Button>
+                        </Box>
                     </DrawerBody>
                 </DrawerContent>
             </Drawer>

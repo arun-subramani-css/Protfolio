@@ -228,14 +228,16 @@ export const ProjectCaseStudyModal: FC<Props> = ({
                                 borderRadius="xl"
                                 overflow="hidden"
                                 border={`1px solid ${BrandPalette.stoneBorder}`}
-                                bg={BrandPalette.stoneNeutral}
+                                bg="#0B0B0B"
+                                p={{ base: 2, md: 3 }}
                             >
                                 <Image
                                     src={project.image}
                                     alt={`${project.title} Preview`}
                                     w="100%"
-                                    maxH="480px"
-                                    objectFit="cover"
+                                    maxH={{ base: "320px", md: "540px" }}
+                                    objectFit="contain"
+                                    mx="auto"
                                 />
                             </Box>
 
@@ -393,6 +395,64 @@ export const ProjectCaseStudyModal: FC<Props> = ({
                                             </Box>
                                         ))}
                                     </SimpleGrid>
+
+                                    {project.id === "zaaroz" && (
+                                        <Box mt="8" mb="2">
+                                            <Text fontSize="xs" fontWeight="700" letterSpacing="0.12em" textTransform="uppercase" color={BrandPalette.mutedTeal} mb="2">
+                                                Visual Comparison · Old UI vs. New UI
+                                            </Text>
+                                            <Heading as="h4" fontSize={{ base: "lg", md: "xl" }} fontWeight="700" color={BrandPalette.charcoal} mb="4">
+                                                Legacy Flow vs. Redesigned Mobile Experience
+                                            </Heading>
+                                            <SimpleGrid columns={{ base: 1, md: 2 }} spacing="5">
+                                                <Box
+                                                    p="4"
+                                                    bg={BrandPalette.cardBg}
+                                                    border={`1px solid ${BrandPalette.stoneBorder}`}
+                                                    borderRadius="xl"
+                                                >
+                                                    <Badge bg="red.900" color="red.200" px="3" py="1" borderRadius="full" fontSize="xs" fontWeight="700" mb="3">
+                                                        Old UI (Legacy App)
+                                                    </Badge>
+                                                    <Box borderRadius="lg" overflow="hidden" bg="#0B0B0B" p="2" mb="3">
+                                                        <Image
+                                                            src="/assets/featured-projects/zaaroz-before.jpg"
+                                                            alt="Zaaroz Legacy UI"
+                                                            maxH="400px"
+                                                            mx="auto"
+                                                            objectFit="contain"
+                                                        />
+                                                    </Box>
+                                                    <Text fontSize="xs" color={BrandPalette.secondaryText} lineHeight="1.6">
+                                                        Equal-weight green blocks, hidden navigation items, low contrast during busy rushes, and lack of visual hierarchy.
+                                                    </Text>
+                                                </Box>
+
+                                                <Box
+                                                    p="4"
+                                                    bg={BrandPalette.cardBg}
+                                                    border={`1px solid ${BrandPalette.stoneBorder}`}
+                                                    borderRadius="xl"
+                                                >
+                                                    <Badge bg="green.900" color="green.200" px="3" py="1" borderRadius="full" fontSize="xs" fontWeight="700" mb="3">
+                                                        New UI (Redesigned App)
+                                                    </Badge>
+                                                    <Box borderRadius="lg" overflow="hidden" bg="#0B0B0B" p="2" mb="3">
+                                                        <Image
+                                                            src="/assets/featured-projects/zaaroz-after.jpg"
+                                                            alt="Zaaroz Redesigned UI"
+                                                            maxH="400px"
+                                                            mx="auto"
+                                                            objectFit="contain"
+                                                        />
+                                                    </Box>
+                                                    <Text fontSize="xs" color={BrandPalette.secondaryText} lineHeight="1.6">
+                                                        Task-first layout, bold energetic orange action buttons, glanceable order cards readable from 2+ feet away, and instant status updates.
+                                                    </Text>
+                                                </Box>
+                                            </SimpleGrid>
+                                        </Box>
+                                    )}
 
                                     {project.demo && (
                                         <Box

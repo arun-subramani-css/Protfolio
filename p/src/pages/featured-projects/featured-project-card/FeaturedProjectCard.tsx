@@ -203,6 +203,7 @@ export const FeaturedProjectCard: FC<Props> = (props) => {
                         w="100%"
                         h={{ base: "210px", sm: "260px", lg: "280px" }}
                         objectFit="cover"
+                        bg="#0B0B0B"
                         loading="lazy"
                     />
                 </Box>

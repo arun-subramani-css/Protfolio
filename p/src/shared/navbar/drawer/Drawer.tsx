@@ -26,6 +26,7 @@ import {
 } from "utils/useScroll";
 import { MenuIcon } from "utils/Icons";
 import { onResumeOpen } from "utils/Functions";
+import { configs } from "shared/content/Content";
 import { BrandPalette } from "theme/colors/Colors";
 
 interface Props extends StyleProps {
@@ -118,9 +119,12 @@ export const MenuDrawer: FC<Props> = ({ onSectionClick, currentPage, ...props })
                                 bg={BrandPalette.primaryText}
                                 color={BrandPalette.mainBg}
                                 _hover={{ bg: BrandPalette.white }}
+                                isDisabled={!configs.common.resume}
                                 onClick={() => {
-                                    onClose();
-                                    onResumeOpen();
+                                    if (configs.common.resume) {
+                                        onClose();
+                                        onResumeOpen();
+                                    }
                                 }}
                             >
                                 View Resume

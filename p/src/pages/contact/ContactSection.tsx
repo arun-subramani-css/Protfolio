@@ -99,6 +99,7 @@ export const ContactSection: FC = () => {
                             variant="outline"
                             borderColor={BrandPalette.stoneBorder}
                             onClick={onResumeOpen}
+                            isDisabled={!configs.common.resume}
                         >
                             View Resume
                         </Button>

@@ -182,8 +182,8 @@
         ],
         "productPerspective": "Translating technical serverless telemetry into actionable link engagement metrics and intuitive dashboards.",
         "github": "https://github.com/arun-subramani-css/Url-Analytics",
-        "image": "/assets/featured-projects/url.webp",
-        "jpg": "/assets/featured-projects/url.jpeg",
+        "image": "/assets/featured-projects/url.jpg",
+        "jpg": "/assets/featured-projects/url.jpg",
         "caseStudy": {
             "overview": "URL Analytics was designed to bridge the gap between simple link shortening and meaningful click performance intelligence for creators and product teams.",
             "problem": "Standard link shorteners often obscure traffic breakdowns or lock basic geographical and device breakdown metrics behind expensive enterprise tiers.",
@@ -248,8 +248,8 @@
         ],
         "productPerspective": "Designing empathetic, dignity-centered resource discovery flows to connect surplus essentials with individuals in need.",
         "github": "https://github.com/arun-subramani-css/Mealink",
-        "image": "/assets/featured-projects/asctb.webp",
-        "jpg": "/assets/featured-projects/asctb.jpeg",
+        "image": "/assets/featured-projects/mealink.jpg",
+        "jpg": "/assets/featured-projects/mealink.jpg",
         "caseStudy": {
             "overview": "Mealink addresses urban food and material waste by connecting community donors who have surplus edible food or household goods with local recipients and volunteers.",
             "problem": "Significant quantities of surplus prepared food and useful clothing are discarded daily because finding nearby individuals or community shelters in real time is cumbersome.",
@@ -313,8 +313,8 @@
         ],
         "productPerspective": "Exploring freeform spatial canvasing versus structured lists for personal brainstorming and note organization.",
         "github": "https://github.com/arun-subramani-css/stickyboard",
-        "image": "/assets/featured-projects/trackcta.webp",
-        "jpg": "/assets/featured-projects/trackcta.jpeg",
+        "image": "/assets/featured-projects/stickyboard.jpg",
+        "jpg": "/assets/featured-projects/stickyboard.jpg",
         "caseStudy": {
             "overview": "StickyBoard provides a lightweight virtual canvas where individuals and small teams can brainstorm, arrange thoughts spatially, and link related ideas.",
             "problem": "Linear note-taking tools force hierarchical order too early in the ideation phase, stifling serendipitous connections and visual clustering.",
@@ -378,8 +378,8 @@
         ],
         "productPerspective": "Solving multi-platform reporting friction through consolidated interface design and cross-platform metric alignment.",
         "github": "https://github.com/hrishikeshpaul/scrapbook",
-        "image": "/assets/other-projects/scrapbook.webp",
-        "jpg": "/assets/other-projects/scrapbook.jpeg",
+        "image": "/assets/featured-projects/social-analytics.jpg",
+        "jpg": "/assets/featured-projects/social-analytics.jpg",
         "caseStudy": {
             "overview": "A unified comparison tool that aggregates key performance indicators across social channels into a single coherent analytical dashboard.",
             "problem": "Content managers waste hours manually switching between native platform analytics (Instagram, Twitter, YouTube) with disparate terminology and incompatible date ranges.",
